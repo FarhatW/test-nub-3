@@ -1,0 +1,277 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <form *ngIf="userForm" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <nb-card>
+        <nb-card-header>
+          <div class="row">
+            <div class="col-md-9">
+              <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; {{ cardHeaderText }}
+            </div>
+
+          </div>
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="firstName">Nom*</label>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon "
+                          [ngClass]="[ userFormErrorsBool[firstName.id] ? 'danger' : 'success']">
+                      <i class="fa fa-user-o" aria-hidden="true"></i></span>
+                  <input type="text"
+                         class="form-control"
+                         [ngClass]="[ userFormErrorsBool[firstName.id] ? 'form-control-danger' : '']"
+                         id="firstName"
+                         #firstName
+                         (blur)="_blurError(userFormErrors.firstName, $event)"
+                         placeholder="Nom du user"
+                         formControlName="firstName">
+                </div>
+                <div *ngIf="userFormErrors.firstName && userFormErrorsBool.firstName"
+                     class="small text-danger text-usernter"
+                     [innerHTML]="userFormErrors.firstName">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lastName">Prénom*</label>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon "
+                          [ngClass]="[ userFormErrorsBool[lastName.id] ? 'danger' : 'success']">
+                      <i class="fa fa-user-o" aria-hidden="true"></i></span>
+                  <input type="text"
+                         class="form-control"
+                         [ngClass]="[ userFormErrorsBool[lastName.id] ? 'form-control-danger' : '']"
+                         id="lastName"
+                         #lastName
+                         (blur)="_blurError(userFormErrors.firstName, $event)"
+                         placeholder="Nom du user"
+                         formControlName="lastName">
+                </div>
+                <div *ngIf="userFormErrors.lastName && userFormErrorsBool.lastName"
+                     class="small text-danger text-usernter"
+                     [innerHTML]="userFormErrors.lastName">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">Email*</label>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon "
+                          [ngClass]="[ userFormErrorsBool[email.id] ? 'danger' : 'success']">
+                      <i class="fa fa-envelope-o " aria-hidden="true"></i></span>
+                  <input type="email"
+                         class="form-control"
+                         [ngClass]="[ userFormErrorsBool[email.id] ? 'form-control-danger' : '']"
+                         id="email"
+                         #email
+                         (blur)="_blurError(userFormErrors.email, $event)"
+                         placeholder="Email du user"
+                         formControlName="email">
+                </div>
+                <div *ngIf="userFormErrors.email && userFormErrorsBool.email"
+                     class="small text-danger text-usernter"
+                     [innerHTML]="userFormErrors.email">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Téléphone</label>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon"
+                        [ngClass]="[ userFormErrorsBool[phone.id] ? 'danger' : 'success']">
+                    <i class="fa fa-phone" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control"
+                         id="phone"
+                         [ngClass]="[ userFormErrorsBool[phone.id] ?
+                          'form-control-danger' : '']"
+                         #phone
+                         (blur)="_blurError(userFormErrors.phone, $event)"
+                         formControlName="phone"
+                         plaholder="04 93 56 99 54"/>
+                </div>
+                <div *ngIf="userFormErrors.phone && userFormErrors.phone"
+                     class="small text-danger text-usernter"
+                     [innerHTML]="userFormErrors.phone">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="company">Société</label>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon"
+                        [ngClass]="[ userFormErrorsBool[company.id] ? 'danger' : 'success']">
+                  <i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                  <input type="text"
+                         [ngClass]="[ userFormErrorsBool[company.id] ?
+                          'form-control-danger' : '']"
+                         #company
+                         id="company"
+                         class="form-control"
+                         formControlName="company"
+                         (blur)="_blurError(userFormErrors.company, $event)"
+                         placeholder="Entrez le nom de la Société"/>
+                </div>
+                <div *ngIf="userFormErrors.company && userFormErrorsBool.company"
+                     class="small text-danger text-usernter"
+                     [innerHTML]="userFormErrors.company">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group input-group-sm">
+                <label for="streetNumber">Numéro Rue</label>
+                <input type="number"
+                       id="streetNumber"
+                       formControlName="streetNumber"
+                       [ngClass]="[ userFormErrorsBool[streetNumber.id] ?
+                          'form-control-danger' : '']"
+                       (blur)="_blurError(userFormErrors.streetNumber, $event)"
+                       class="form-control"
+                       #streetNumber
+                       [min]="userf.streetMin">
+                <div *ngIf="userFormErrors.streetNumber && userFormErrorsBool.streetNumber"
+                     class="small text-danger text-usernter"
+                     [innerHTML]="userFormErrors.streetNumber">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group input-group-sm">
+                <label>Adresse</label>
+                <input type="text" class="form-control" id="address1"
+                       formControlName="address1"
+                       [ngClass]="[ userFormErrorsBool[address1.id] ?
+                          'form-control-danger' : '']"
+                       #address1
+                       (blur)="_blurError(userFormErrors.address1, $event)"
+                       placeholder="Entrez l'adresse du user">
+                <div *ngIf="userFormErrors.address1 && userFormErrorsBool.address1"
+                     class="small text-danger text-usernter"
+                     [innerHTML]="userFormErrors.address1">
+                </div>
+              </div>
+
+
+            </div>
+            <div class="col-md-6">
+              <div class="form-group input-group-sm">
+                <label>Complément d'adresse</label>
+                <input type="text"
+                       class="form-control" id="address2"
+                       formControlName="address2"
+                       placeholder="Etage, batiment...">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group input-group-sm">
+                <label>Code Postal</label>
+                <input type="text" class="form-control input-group-sm"
+                       id="postalCode"
+                       [ngClass]="[ userFormErrorsBool[postalCode.id] ?
+                          'form-control-danger' : '']"
+                       #postalCode
+                       (blur)="_blurError(userFormErrors.postalCode, $event)"
+                       formControlName="postalCode"
+                       placeholder="Entrez un Code Postal">
+                <div *ngIf="userFormErrors.postalCode && userFormErrorsBool.postalCode"
+                     class="small text-danger text-usernter"
+                     [innerHTML]="userFormErrors.postalCode">
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-5">
+              <div class="form-group input-group-sm">
+                <label>Ville</label>
+                <input type="text" class="form-control"
+                       [ngClass]="[ userFormErrorsBool[city.id] ?
+                          'form-control-danger' : '']"
+                       formControlName="city"
+                       id="city"
+                       #city
+                       (blur)="_blurError(userFormErrors.city, $event)"
+                       placeholder="Entrez la ville du user"/>
+                <div *ngIf="userFormErrors.city && userFormErrorsBool.city "
+                     class="small text-danger text-usernter"
+                     [innerHTML]="userFormErrors.city">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" *ngIf="!isAdmin">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>CE associé</label>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon "
+                        [ngClass]="[ userFormErrorsBool[ceId.id] ? 'danger' : 'success']">
+                      <i class="fa fa-building" aria-hidden="true"></i></span>
+                  <select class="form-control small"
+                          name="ceId"
+                          [ngClass]="[ userFormErrorsBool[ceId.id] ?'form-control-danger' : '']"
+                          id="ceId"
+                          #ceId
+
+                          (blur)="_blurError(userFormErrors.ceId, $event)"
+                          formControlName="ceId">
+                    <option [ngValue]="null">Sélectionnez un CE</option>
+                    <option *ngFor="let ce of ces" [ngValue]="ce.id">
+                      {{ ce.id}} - {{ce.name }}
+                    </option>
+                  </select>
+                </div>
+                <div *ngIf="userFormErrors.ceId && userFormErrors.ceId"
+                     class="small text-danger text-center"
+                     [innerHTML]="userFormErrors.ceId">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group input-group-sm">
+                <div class="container-btn">
+                  <button class="btn btn-primary btn-tn"
+                          type="submit"
+                          [attr.disabled]="userForm.invalid || submitting ? true : null"
+                          [innerText]="submitBtnText"></button>
+                  <button class="btn btn-warning btn-tn"
+                          type="button"
+                          (click)="_resetForm()"
+                          [innerText]="resetBtnText"></button>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </nb-card-body>
+        <nb-card-footer>
+          <small class="pull-right"><i>Les champs marqués d'une * sont obligatoires</i></small>
+        </nb-card-footer>
+      </nb-card>
+    </form>
+    <nb-card *ngIf="noUser">
+      <nb-card-header>Pas de user</nb-card-header>
+      <nb-card-body> usertte ID user n'éxiste pas. Vérifiez vos informations.</nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+
+
+
+
+

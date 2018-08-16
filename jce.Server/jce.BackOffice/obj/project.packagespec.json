@@ -1,0 +1,91 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.BackOffice\\jce.BackOffice.csproj",
+    "projectName": "jce.BackOffice",
+    "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.BackOffice\\jce.BackOffice.csproj",
+    "outputPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.BackOffice\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {
+          "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.BusinessLayer\\jce.BusinessLayer.csproj": {
+            "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.BusinessLayer\\jce.BusinessLayer.csproj"
+          },
+          "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.Common\\jce.Common.csproj": {
+            "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.Common\\jce.Common.csproj"
+          },
+          "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.DataAccess\\jce.DataAccess.csproj": {
+            "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.DataAccess\\jce.DataAccess.csproj"
+          },
+          "D:\\projets\\JCTeam\\jce.project\\jce.Server\\Managers\\Managers\\Managers.csproj": {
+            "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\Managers\\Managers\\Managers.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "noWarn": [
+        "NU1605"
+      ],
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "IdentityServer4.AccessTokenValidation": {
+          "target": "Package",
+          "version": "[2.3.0, )"
+        },
+        "MailKit": {
+          "target": "Package",
+          "version": "[2.0.1, )"
+        },
+        "Microsoft.AspNetCore.All": {
+          "target": "Package",
+          "version": "[2.0.5, )"
+        },
+        "Microsoft.AspNetCore.Authentication": {
+          "target": "Package",
+          "version": "[2.1.0-preview1-final, )"
+        },
+        "Microsoft.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[2.0.2, )"
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.0.0, )",
+          "autoReferenced": true
+        },
+        "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+          "target": "Package",
+          "version": "[2.0.2, )"
+        },
+        "MimeKit": {
+          "target": "Package",
+          "version": "[2.0.1, )"
+        },
+        "Newtonsoft.Json": {
+          "target": "Package",
+          "version": "[11.0.1, )"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

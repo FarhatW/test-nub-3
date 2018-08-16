@@ -1,0 +1,59 @@
+<nb-card>
+  <nb-card-header>Ajout de produits</nb-card-header>
+  <nb-card-body>
+    <div class="input-group">
+      <span class="input-group-addon success"><i class="ion-search" aria-hidden="true"></i></span>
+      <input type="text" class="form-control" placeholder="Cherchez un produit (3 charactères min.)"
+             (keyup)="searchTerm$.next($event.target.value)"/>
+    </div>
+    <div *ngIf="products ">
+      <div *ngFor="let product of products.items | slice:0:5; let i = index" class="products">
+        <div class="productList">
+          <span> <b>{{(i < 4) ?  product.refPintel + ' / ' : '...'}}</b> </span>
+          <span>{{(i < 4) ? ((product.details.length > 10)? ((product.details |slice:0:10) + '...' ) : product.details ) + ' / ' : '' }}</span>
+          <span> {{(i < 4) ? (product.price + '€') : '' }} </span> <span *ngIf="i < 4 ">
+                <i class="ion-ios-plus-outline pull-right" style="cursor: pointer" aria-hidden="true"
+                   (click)="addToProductPersoArray(product)"></i> </span>
+        </div>
+      </div>
+      <div class="productList" *ngIf="products.totalItems >= 0"><b>{{ products.totalItems }} produit(s) </b>
+        correspond(ent) à votre recherche
+      </div>
+    </div>
+    <hr>
+    <div *ngIf="productPersoArr.length > 0">
+      <table class="col-md-12">
+        <thead>
+        <tr>
+          <th>Ref. Pintel</th>
+          <th>Date Min</th>
+          <th>Date Max</th>
+          <th>Participation de.</th>
+          <th *ngIf="isMiniCatalog">Alias</th>
+        </tr>
+        <tr *ngFor="let productPerso of productPersoArr">
+          <td>{{productPerso.refPintel}}</td>
+          <td><input [ngClass]="{'productArrInputsDanger':
+                           productPerso.dateMin >= productPerso.dateMax || productPerso.dateMin < 1998 }"
+                     type="number" min="1998" max="2018" class="productArrInputs"
+                     [(ngModel)]="productPerso.dateMin"></td>
+          <td><input [ngClass]="{'productArrInputsDanger':
+                           productPerso.dateMax <=  productPerso.dateMin  ||  productPerso.dateMax > 2018}"
+                     type="number" min="1998" max="2018" class="productArrInputs"
+                     [(ngModel)]="productPerso.dateMax"></td>
+          <td><input type="text" class="col-md-11 productArrInputs"
+                     [(ngModel)]="productPerso.employeeParticipationMessage"></td>
+          <td *ngIf="isMiniCatalog">
+            <input type="text"
+                   class="col-md-11 productArrInputs"
+                   [(ngModel)]="productPerso.clientProductAlias"></td>
+          <td><i (click)="removeFromProductArray(productPerso)"
+                 class="ion-android-cancel productArrI red" aria-hidden="true"></i></td>
+          <td><i (click)="sendGood(productPerso)"
+                 class="ion-plus-circled pull-right productArrI green" aria-hidden="true"></i></td>
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,16 @@
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\bin\Debug\netcoreapp2.0\Managers.deps.json
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\bin\Debug\netcoreapp2.0\Managers.dll
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\bin\Debug\netcoreapp2.0\Managers.pdb
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\bin\Debug\netcoreapp2.0\jce.BusinessLayer.dll
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\bin\Debug\netcoreapp2.0\jce.Common.dll
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\bin\Debug\netcoreapp2.0\jce.DataAccess.dll
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\bin\Debug\netcoreapp2.0\jce.BusinessLayer.pdb
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\bin\Debug\netcoreapp2.0\jce.Common.pdb
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\obj\Debug\netcoreapp2.0\Managers.csproj.CoreCompileInputs.cache
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\obj\Debug\netcoreapp2.0\Managers.AssemblyInfoInputs.cache
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\obj\Debug\netcoreapp2.0\Managers.AssemblyInfo.cs
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\obj\Debug\netcoreapp2.0\Managers.csproj.CopyComplete
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\obj\Debug\netcoreapp2.0\Managers.dll
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\obj\Debug\netcoreapp2.0\Managers.pdb
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\bin\Debug\netcoreapp2.0\jce.DataAccess.pdb
+D:\projets\JCTeam\jce.project\jce.Server\Managers\Managers\obj\Debug\netcoreapp2.0\Managers.csprojAssemblyReference.cache

@@ -1,0 +1,117 @@
+<nb-card>
+  <nb-card-header><h4><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp;  Configuration du CE</h4></nb-card-header>
+  <nb-card-body>
+    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && submit()">
+    <div class="row">
+      <div class="col-md-2">
+            <label>Groupement d'âge</label>
+            <div [(ngModel)]="ceSetup.isAgeGroupChoiceLimitation" name="AgeGroupChoiceLimitation"  id="isAgeGroupChoiceLimitation" #AgeGroupChoiceLimitation="ngModel" ngbRadioGroup
+                 class="btn-group btn-toggle-group btn-outline-toggle-group btn-toggle-radio-group">
+              <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+                <input ngbButton type="radio"  [value]="false" > Non
+              </label>
+              <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+                <input ngbButton type="radio"  [value]="true"> Oui
+              </label>
+            </div>
+      </div>
+      <div class="col-md-2 nopadding">
+          <label>Livraison à domicile</label>
+          <div [(ngModel)]="ceSetup.isHomeDelivery" name="isHomeDelivery" #isHomeDelivery="ngModel" ngbRadioGroup
+               class="btn-group btn-toggle-group btn-outline-toggle-group btn-toggle-radio-group">
+            <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+              <input ngbButton type="radio" [value]="false" > Non
+            </label>
+            <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+              <input ngbButton type="radio" [value]="true"> Oui
+            </label>
+          </div>
+      </div>
+      <div class="col-md-2 nopadding">
+        <label>Participation du CE</label>
+        <div [(ngModel)]="ceSetup.isCeParticipation" name="isCeParticipation" #isCeParticipation="ngModel" ngbRadioGroup
+             class="btn-group btn-toggle-group btn-outline-toggle-group btn-toggle-radio-group">
+          <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+            <input ngbButton type="radio" [value]="false" > Non
+          </label>
+          <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+            <input ngbButton type="radio" [value]="true"> Oui
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 nopadding">
+        <label>Participation de l'employé</label>
+        <div [(ngModel)]="ceSetup.isEmployeeParticipation" name="isEmployeeParticipation" #isEmployeeParticipation="ngModel" ngbRadioGroup
+             class="btn-group btn-toggle-group btn-outline-toggle-group btn-toggle-radio-group">
+          <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+            <input ngbButton type="radio" [value]="false" > Non
+          </label>
+          <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+            <input ngbButton type="radio" [value]="true" > Oui
+          </label>
+        </div>
+      </div>
+      <div class="col-md-2 nopadding">
+        <label>Groupement Autorisé</label>
+        <div [(ngModel)]="ceSetup.isGroupingAllowed" name="isGroupingAllowed" #isGroupingAllowed="ngModel" ngbRadioGroup
+             class="btn-group btn-toggle-group btn-outline-toggle-group btn-toggle-radio-group">
+          <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+            <input ngbButton type="radio" [value]="false" > Non
+          </label>
+          <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+            <input ngbButton type="radio" [value]="true"> Oui
+          </label>
+        </div>
+      </div>
+      </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="welcomeMessage">Message de bienvenue</label>
+          <textarea name="welcomeMessage" id="welcomeMessage" [(ngModel)]="ceSetup.welcomeMessage" class="form-control" #welcomeMessage="ngModel" placeholder=""> </textarea>
+        </div>
+      </div>
+    <div class="col-md-2">
+      <label>Mail de confirmation</label>
+      <div [(ngModel)]="ceSetup.isOrderConfirmationMail" name="isOrderConfirmationMail" #isOrderConfirmationMail="ngModel" ngbRadioGroup
+           class="btn-group btn-toggle-group btn-outline-toggle-group btn-toggle-radio-group">
+        <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+          <input ngbButton type="radio" [value]="false" > Non
+        </label>
+        <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+          <input ngbButton type="radio" [value]="true"> Oui
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3 nopadding">
+      <label>Mail de confirmation pour l'admin</label>
+      <div [(ngModel)]="ceSetup.isOrderConfirmationMail4Admin" name="isOrderConfirmationMail4Admin" #isOrderConfirmationMail4Admin="ngModel" ngbRadioGroup
+           class="btn-group btn-toggle-group btn-outline-toggle-group btn-toggle-radio-group">
+        <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+          <input ngbButton type="radio" [value]="false" > Non
+        </label>
+        <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+          <input ngbButton type="radio" [value]="true"> Oui
+        </label>
+      </div>
+    </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <div class="container-btn">
+            <button class="btn btn-primary btn-tn">{{!ceSetup.id ? 'Ajouter' : 'Mettre a jour'}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <!--<span>{{ ce.name | uppercase}} - {{ ce.address.company | uppercase }}</span>-->
+
+  </nb-card-footer>
+</nb-card>
+<!--{{ ceSetup | json }}-->
+<nb-card *ngIf="noCE">PAS DE CE</nb-card>

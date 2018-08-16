@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
+
+  </PropertyGroup>
+
+ <PropertyGroup>
+   <TargetFramework>netcoreapp2.0</TargetFramework>
+   <RuntimeFrameworkVersion>2.0.3</RuntimeFrameworkVersion>
+</PropertyGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameWorkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+
+ <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
+    <PackageReference Include="FluentAssertions" Version="5.1.2" />
+    <PackageReference Include="FluentValidation" Version="7.5.0" />
+    <PackageReference Include="IdentityServer4.EntityFramework" Version="2.1.1" />
+    <PackageReference Include="MailKit" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+   <PackageReference Update="Microsoft.EntityFrameworkCore" Version="2.0.2" />
+   <PackageReference Update="Microsoft.EntityFrameworkCore.Design" Version="2.0.2" />
+   <PackageReference Update="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.2" />
+   <PackageReference Update="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.5" />
+    <PackageReference Include="MimeKit" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\jce.Common\jce.Common.csproj" />
+  </ItemGroup>
+
+</Project>

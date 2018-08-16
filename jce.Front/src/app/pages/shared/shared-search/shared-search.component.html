@@ -1,0 +1,8 @@
+<div class="input-group col-12">
+          <span *ngIf="searchInput.value.length >= 3" (click)="clearSearch(); searchInput.value = ''"
+                class="input-group-addon success onhover"><i class="ion-close-circled" aria-hidden="true"></i></span>
+  <span *ngIf="searchInput.value.length < 3" class="input-group-addon success"><i class="ion-search"
+                                                                                  aria-hidden="true"></i></span>
+  <input type="text" class="form-control" placeholder="Recherche (3 charactères min.)"
+         (keyup)="searchTerm$.next($event.target.value)" #searchInput/>
+</div>

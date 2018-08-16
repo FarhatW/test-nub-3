@@ -1,0 +1,25 @@
+
+<div class="stepwizard">
+  <div class="stepwizard-row">
+    <div class="stepwizard-step">
+      <button type="button"[ngClass]="!addProfile ? 'btn-primary': 'btn-default' "  class="btn  btn-circle">1</button>
+      <p>Identifiant</p>
+    </div>
+    <div class="stepwizard-step">
+      <button type="button" [ngClass]="addProfile ? 'btn-primary': 'btn-default' "  class="btn  btn-circle">2</button>
+      <p>Profile</p>
+    </div>
+
+    <div class="stepwizard-step"  *ngIf="isECE" >
+      <button type="button" [ngClass]="!addProfile ? 'btn-primary': 'btn-default' "  class="btn  btn-circle">3</button>
+      <p>Enfants</p>
+    </div>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<!--<ngx-user-identity-form *ngIf="addProfile" (formIdentity)="getFormToDisplay($event)"></ngx-user-identity-form>-->
+<!--<ngx-user-jce-form *ngIf="!addProfile"></ngx-user-jce-form>-->
+

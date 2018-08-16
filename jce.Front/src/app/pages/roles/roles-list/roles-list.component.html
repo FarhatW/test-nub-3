@@ -1,0 +1,138 @@
+<nb-card>
+  <nb-card-header>
+    Liste des Roles
+
+      <button class="btn btn-hero-success pull-right" (click)="showAddModal()">
+        <span class="ion-plus"></span>
+      </button>
+
+
+  </nb-card-header>
+
+  <nb-card-body>
+    <ngx-datatable
+      #rolesTable
+      [rows]="rows"
+      [columns]="columns"
+      class="material"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="'auto'"
+      [externalPaging]="true"
+      [externalSorting]="true"
+      [count]="page.totalElements"
+      [offset]="page.pageNumber"
+      (sort)="onSort($event)"
+      [limit]="page.size"
+      style="border-radius: 5px; box-shadow: 0px">
+
+
+      <ngx-datatable-column
+
+        [sortable]="true"
+        [canAutoResize]="true"
+        [draggable]="true"
+        [resizeable]="true"
+        name="Id">
+      </ngx-datatable-column>
+
+      <ngx-datatable-column
+
+        [sortable]="true"
+        [canAutoResize]="true"
+        [draggable]="true"
+        [resizeable]="true"
+        name="name">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+            <span
+              title="Double click to edit"
+              (dblclick)="editing[rowIndex + '-name'] = true"
+              *ngIf="!editing[rowIndex + '-name']">
+              {{value}}
+            </span>
+          <input
+            autofocus
+            (blur)="updateValue($event, 'name', rowIndex)"
+            *ngIf="editing[rowIndex+ '-name']"
+            type="text"
+            [value]="value"
+          />
+        </ng-template>
+
+
+
+      </ngx-datatable-column>
+      <ngx-datatable-column
+
+        [sortable]="true"
+        [canAutoResize]="true"
+        [draggable]="true"
+        [resizeable]="true"
+        name="createdBy">
+      </ngx-datatable-column>
+
+      <ngx-datatable-column
+
+        [sortable]="true"
+        [canAutoResize]="true"
+        [draggable]="true"
+        [resizeable]="true"
+        name="createdOn">
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          {{value | date:'d MMMM , y'}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column
+
+        [sortable]="true"
+        [canAutoResize]="true"
+        [draggable]="true"
+        [resizeable]="true"
+        name="rank">
+
+      </ngx-datatable-column>
+      <ngx-datatable-column
+
+        [sortable]="true"
+        [canAutoResize]="true"
+        [draggable]="true"
+        [resizeable]="true"
+        name="updatedBy">
+
+      </ngx-datatable-column>
+
+      <ngx-datatable-column
+
+        [sortable]="true"
+        [canAutoResize]="true"
+        [draggable]="true"
+        [resizeable]="true"
+        name="updatedOn">
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+         {{value | date:'d MMMM , y'}}
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column
+        [width]="100"
+        [sortable]="true"
+        [canAutoResize]="false"
+        [draggable]="false"
+        [resizeable]="false"
+        name="Supprimer">
+
+        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <p data-placement="top" data-toggle="tooltip" title="View">
+          <button class="btn btn-hero-danger" (click)="showDeleteModal(row.id)">
+            <span class="ion-ios-trash-outline"></span>
+          </button>
+        </p>
+        </ng-template>
+      </ngx-datatable-column>
+
+    </ngx-datatable>
+
+
+  </nb-card-body>
+</nb-card>

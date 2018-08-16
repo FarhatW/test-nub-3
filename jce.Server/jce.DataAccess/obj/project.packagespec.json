@@ -1,0 +1,90 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.DataAccess\\jce.DataAccess.csproj",
+    "projectName": "jce.DataAccess",
+    "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.DataAccess\\jce.DataAccess.csproj",
+    "outputPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.DataAccess\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {
+          "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.Common\\jce.Common.csproj": {
+            "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.Common\\jce.Common.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "noWarn": [
+        "NU1605"
+      ],
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "AutoMapper": {
+          "target": "Package",
+          "version": "[6.2.2, )"
+        },
+        "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+          "target": "Package",
+          "version": "[3.2.0, )"
+        },
+        "FluentAssertions": {
+          "target": "Package",
+          "version": "[5.1.2, )"
+        },
+        "FluentValidation": {
+          "target": "Package",
+          "version": "[7.5.0, )"
+        },
+        "IdentityServer4.EntityFramework": {
+          "target": "Package",
+          "version": "[2.1.1, )"
+        },
+        "MailKit": {
+          "target": "Package",
+          "version": "[2.0.1, )"
+        },
+        "Microsoft.AspNetCore.All": {
+          "target": "Package",
+          "version": "[2.0.5, )"
+        },
+        "Microsoft.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[2.0.2, )"
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.0.3, )",
+          "autoReferenced": true
+        },
+        "MimeKit": {
+          "target": "Package",
+          "version": "[2.0.1, )"
+        },
+        "Newtonsoft.Json": {
+          "target": "Package",
+          "version": "[11.0.1, )"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

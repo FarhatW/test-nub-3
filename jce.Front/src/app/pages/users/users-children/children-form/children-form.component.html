@@ -1,0 +1,168 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <form *ngIf="childForm" [formGroup]="childForm" (ngSubmit)="onSubmit()">
+      <nb-card>
+        <nb-card-header>
+          <div class="row">
+            <div class="col-md-9">
+              <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; {{ cardHeaderText }}
+            </div>
+
+          </div>
+        </nb-card-header>
+        <nb-card-body>
+
+          <div class="row">
+            <div class="col-md-2">
+              <label>Nouvelle naissence</label>
+            <div name="isExpectBirth"   ngbRadioGroup
+                   class="btn-group btn-toggle-group btn-outline-toggle-group btn-toggle-radio-group">
+                <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+                  <input ngbButton type="radio" [value]="false" > Non
+                </label>
+                <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+                  <input ngbButton type="radio" [value]="true"> Oui
+                </label>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label>Genre</label>
+              <div class="input-group">
+                <div class=" input-group-btn" ngbDropdown>
+                  <div  class="btn btn-success">
+                   Genre
+                  </div>
+                </div>
+                <select class="form-control">
+                  <option value="1" >Garçon</option>
+                  <option value="2">Fille</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="firstName">Nom*</label>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon "
+                          [ngClass]="[ childFormErrorsBool[firstName.id] ? 'danger' : 'success']">
+                      <i class="fa fa-user-o" aria-hidden="true"></i></span>
+                  <input type="text"
+                         class="form-control"
+                         [ngClass]="[ childFormErrorsBool[firstName.id] ? 'form-control-danger' : '']"
+                         id="firstName"
+                         #firstName
+                         (blur)="_blurError(childFormErrors.firstName, $event)"
+                         placeholder="Nom du l'enfant"
+                         formControlName="firstName">
+                </div>
+                <div *ngIf="childFormErrors.firstName && childFormErrorsBool.firstName"
+                     class="small text-danger text-center"
+                     [innerHTML]="childFormErrors.firstName">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="lastName">Prénom*</label>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon "
+                          [ngClass]="[ childFormErrorsBool[lastName.id] ? 'danger' : 'success']">
+                      <i class="fa fa-user-o" aria-hidden="true"></i></span>
+                  <input type="text"
+                         class="form-control"
+                         [ngClass]="[ childFormErrorsBool[lastName.id] ? 'form-control-danger' : '']"
+                         id="lastName"
+                         #lastName
+                         (blur)="_blurError(childFormErrors.firstName, $event)"
+                         placeholder="Nom de l'enfant"
+                         formControlName="lastName">
+                </div>
+                <div *ngIf="childFormErrors.lastName && childFormErrorsBool.lastName"
+                     class="small text-danger text-usernter"
+                     [innerHTML]="childFormErrors.lastName">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group input-group-sm">
+                <label>Date de naissance </label>
+                <input type="date" class="form-control"
+                       [value]="childForm.birthDate | date: 'yyyy-MM-dd' "
+                       #expirationDate
+                       id="birthDate"
+                       formControlName="birthDate">
+                <div *ngIf="childFormErrors.birthDate && childFormErrorsBool"
+                     class="small text-danger"
+                     [innerHTML]="childFormErrors.birthDate"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+
+              <div class="form-group">
+                <label for="firstName">Montant de participation*</label>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon "
+                          [ngClass]="[ childFormErrorsBool[amountParticipationCe.id] ? 'danger' : 'success']">
+                      <i class="fas fa-hand-holding-usd" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control input-group-sm"
+                         id="amountParticipationCe"
+                         [ngClass]="[ childFormErrorsBool[amountParticipationCe.id] ?
+                          'form-control-danger' : '']"
+                         #amountParticipationCe
+                         (blur)="_blurError(childFormErrors.amountParticipationCe, $event)"
+                         formControlName="amountParticipationCe"
+                         placeholder="Entrez le montant de participation">
+                  </div>
+                  <div *ngIf="childFormErrors.amountParticipationCe && childFormErrors.amountParticipationCe"
+                       class="small text-danger text-usernter"
+                       [innerHTML]="childFormErrors.amountParticipationCe">
+              </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group input-group-sm">
+                <div class="container-btn">
+                  <button class="btn btn-primary btn-tn"
+                          type="submit"
+                          [attr.disabled]="childForm.invalid || submitting ? true : null"
+                          [innerText]="submitBtnText"></button>
+                  <button class="btn btn-warning btn-tn"
+                          type="button"
+                          (click)="_resetForm()"
+                          [innerText]="resetBtnText"></button>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </nb-card-body>
+
+        <nb-card-footer>
+          <small class="pull-right"><i>Les champs marqués d'une * sont obligatoires</i></small><br>
+
+
+          <small class="pull-right"><B> Pour une naissance future, le prénom de l'enfant sera automatiquement "Bébé" et sa date de naissance sera associée au 1er Janvier de l'année en cours.</B></small>
+        </nb-card-footer>
+      </nb-card>
+    </form>
+    <nb-card *ngIf="noUser">
+      <nb-card-header>Pas de user</nb-card-header>
+      <nb-card-body> usertte ID user n'éxiste pas. Vérifiez vos informations.</nb-card-body>
+    </nb-card>
+  </div>
+</div>
+

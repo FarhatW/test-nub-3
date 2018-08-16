@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
+
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\CeSetup\CeSetupSaveResource.cs~RF692b95.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="IdentityServer4" Version="2.1.2" />
+    <PackageReference Include="MailKit" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore" Version="2.0.2" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore.Design" Version="2.0.2" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.2" />
+    <PackageReference Update="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.1.0-preview1-final" />
+
+  </ItemGroup>
+
+</Project>

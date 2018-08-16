@@ -1,0 +1,91 @@
+<nb-card>
+  <nb-card-header>
+    {{ cardHeaderTitle }}
+    <span class="pull-right grey">{{ cardHeaderId }}</span>
+  </nb-card-header>
+  <nb-card-body>
+    <form *ngIf="pintelsheetForm" [formGroup]="pintelsheetForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Ref. Fiche de collectivités : </label>
+            <div class="input-group input-group-sm">
+              <input type="text" placeholder="Ref. Fiche de collectivités"
+                     class="form-control"
+                     (blur)="_blurError(pintelsheetFormErrors.sheetId, $event)"
+                     id="sheetId"
+                     formControlName="sheetId"
+                     #sheetId
+              />
+            </div>
+            <div *ngIf="pintelsheetFormErrors.sheetId && pintelsheetFormErrorsBool.sheetId"
+                 class="small text-danger text-center"
+                 [innerHTML]="pintelsheetFormErrors.sheetId">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Saison : </label>
+            <div class="input-group input-group-sm">
+              <input type="text" placeholder="Saison"
+                     class="form-control"
+                     [ngClass]="[ pintelsheetFormErrorsBool[season.id] ?
+                          'form-control-danger' : '']"
+                     (blur)="_blurError(pintelsheetFormErrors.season, $event)"
+                     id="season"
+                     formControlName="season"
+                     #season
+              />
+            </div>
+            <div *ngIf="pintelsheetFormErrors.season && pintelsheetFormErrorsBool.season"
+                 class="small text-danger text-center"
+                 [innerHTML]="pintelsheetFormErrors.season">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <label>Groupe d'age : </label>
+            <div class="input-group input-group-sm">
+              <select class="form-control small"
+                      [ngClass]="[ pintelsheetFormErrorsBool[ageGroupId.id] ?
+                          'form-control-danger' : '']"
+                      formControlName="ageGroupId"
+                      id="ageGroupId"
+                      (blur)="_blurError(pintelsheetFormErrors.originId, $event)"
+                      #ageGroupId
+                      [compareWith]="_compare">
+                <option [ngValue]="null">Sélectionnez un groupe d'age</option>
+                <option *ngFor="let ageGroup of ageGroups"
+                        [ngValue]="ageGroup.id">{{ ageGroup.name }}
+                </option>
+              </select>
+            </div>
+            <div *ngIf="pintelsheetFormErrors.ageGroupId && pintelsheetFormErrorsBool.ageGroupId"
+                 class="small text-danger text-center"
+                 [innerHTML]="pintelsheetFormErrors.ageGroupId">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group input-group-sm">
+            <div class="container-btn">
+              <button class="btn btn-primary btn-tn"
+                      type="submit"
+                      [attr.disabled]="pintelsheetForm.invalid || submitting ? true : null"
+                      [innerText]="submitBtnText"></button>
+              <span class="btn btn-danger btn-tn pull right" (click)="onClose()">Fermer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

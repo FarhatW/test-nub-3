@@ -1,0 +1,11 @@
+ <nb-card>
+  <nb-card-header>Localisation de la société </nb-card-header>
+  <nb-card-body>
+    <agm-map [latitude]="lat"
+             [longitude]="lng"
+             [zoom]="zoom">
+      <agm-marker [latitude]="lat"
+                  [longitude]="lng"></agm-marker>
+    </agm-map>
+  </nb-card-body>
+</nb-card>

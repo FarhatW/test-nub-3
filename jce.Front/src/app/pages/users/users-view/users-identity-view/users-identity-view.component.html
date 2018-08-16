@@ -1,0 +1,48 @@
+<nb-card>
+
+  <nb-card-header>les informations  du l'utilisateur n° {{ userIdentity?.id}}</nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-12">
+        <div class="col-12">
+          <label><b>Nom : </b>{{ userIdentity?.userName }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>Email : </b>{{ userIdentity?.email }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>phoneNumber : </b>{{ userIdentity?.phoneNumber }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>lockoutEnd : </b>{{ userIdentity?.lockoutEnd }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>lockoutEnabled : </b>{{ userIdentity?.lockoutEnabled }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>accessFailedCount : </b>{{ userIdentity?.accessFailedCount }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>roles: </b> <span *ngFor="let role of userIdentity?.roles" class="label label-danger">{{role.name}},   </span></label>
+        </div>
+        <div class="col-12">
+          <label><b>createdBy : </b>{{ userIdentity?.createdBy }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>updatedBy : </b>{{ userIdentity?.updatedBy }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>createdOn : </b>{{ userIdentity?.createdOn }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>updatedOn : </b>{{ userIdentity?.updatedOn }}</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary btn-tn pull-left" [routerLink]="['/users/users-form/identity-form/', userIdentity?.id]">Editer l'utilisateur</button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

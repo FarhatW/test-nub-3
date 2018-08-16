@@ -1,0 +1,12 @@
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\bin\Debug\netcoreapp2.0\jce.DataAccess.dll
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\bin\Debug\netcoreapp2.0\jce.Common.dll
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\bin\Debug\netcoreapp2.0\jce.Common.pdb
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\obj\Debug\netcoreapp2.0\jce.DataAccess.csproj.CoreCompileInputs.cache
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\obj\Debug\netcoreapp2.0\jce.DataAccess.AssemblyInfoInputs.cache
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\obj\Debug\netcoreapp2.0\jce.DataAccess.AssemblyInfo.cs
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\obj\Debug\netcoreapp2.0\jce.DataAccess.dll
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\obj\Debug\netcoreapp2.0\jce.DataAccess.pdb
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\bin\Debug\netcoreapp2.0\jce.DataAccess.deps.json
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\bin\Debug\netcoreapp2.0\jce.DataAccess.pdb
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\obj\Debug\netcoreapp2.0\jce.DataAccess.csproj.CopyComplete
+D:\projets\JCTeam\jce.project\jce.Server\jce.DataAccess\obj\Debug\netcoreapp2.0\jce.DataAccess.csprojAssemblyReference.cache

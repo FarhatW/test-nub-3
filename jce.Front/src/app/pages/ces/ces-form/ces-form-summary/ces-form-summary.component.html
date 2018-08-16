@@ -1,0 +1,26 @@
+<nb-card *ngIf="ce">
+  <nb-card-header>
+    <i class="ion-ios-redo-outline" aria-hidden="true"></i>
+    Récap. du CE.
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-md-6">
+      <label>Nom du CE : {{ ce?.name }} </label>
+    </div>
+      <div class="col-md-6">
+        <label>Entreprise : {{ ce?.address?.company }} </label>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
+<nb-card *ngIf="!ce">
+  <nb-card-header>Création de CE</nb-card-header>
+  <nb-card-body>
+    Cette page va vous permettre de créer un CE.
+    Vous pouvez le créer et ainsi passer à sa configuration et à la création du catalogue, ou bien
+    tout simplement le faire en plusieurs fois.
+
+    Veillez à bien respecter les champs obligatoires.
+  </nb-card-body>
+</nb-card>

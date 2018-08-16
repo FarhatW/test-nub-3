@@ -1,0 +1,20 @@
+<div class="input-group input-group-sm">
+          <span *ngIf="searchInput.value.length >= 3" (click)="clearSearch(); searchInput.value = ''"
+                class="input-group-addon success onhover"><i class="ion-close-circled" aria-hidden="true"></i></span>
+  <span *ngIf="searchInput.value.length < 3" class="input-group-addon success"><i class="ion-search"
+                                                                                  aria-hidden="true"></i></span>
+  <input type="text" class="form-control" placeholder="Cherchez un produit (3 charactères min.)"
+         (keyup)="searchTerm$.next($event.target.value)" #searchInput/>
+</div>
+<div *ngIf="products ">
+  <div *ngFor="let product of products | slice:0:5; let i = index"class="products">
+    <div class="productList">
+      <span> <i class="ion-plus-round onhover" (click)="sendGood(product)" aria-hidden="true"></i> / <b>{{(i < 4) ?  product.refPintel + ' / ' : '...'}}</b> </span>
+      <span>{{(i < 4) ? ((product.details.length > 10)? ((product.details |slice:0:10) + '...' ) : product.details ) + ' / ' : '' }}</span>
+      <span> {{(i < 4) ? returnSupplier(product.supplierId) : '' }} </span> <span *ngIf="i < 4 " >
+                <i class="ion-ios-plus-outline pull-right" style="cursor: pointer" aria-hidden="true" ></i></span>
+    </div>
+  </div>
+  <!--<div class="productList" *ngIf="totalItems >= 0"><b>{{ totalItems }} produit(s) </b> correspond(ent) à votre recherche</div>-->
+  <div class="productList" *ngIf="totalItems >= 0"><b>{{ returnString(totalItems) }}</b></div>
+</div>

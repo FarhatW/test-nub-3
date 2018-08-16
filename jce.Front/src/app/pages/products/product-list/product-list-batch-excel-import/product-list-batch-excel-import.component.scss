@@ -1,0 +1,23 @@
+:host ::ng-deep ng2-smart-table th {
+  padding: 0.2rem 0.5rem !important;
+}
+
+:host ::ng-deep ng2-smart-table tr td {
+  padding: 0.2rem 0.5rem !important;
+  font-size: 0.8rem !important;
+}
+
+:host ::ng-deep ng2-smart-table .form-control {
+  padding:  0.2rem 0.5rem !important;
+}
+
+:host ::ng-deep ng2-smart-table input {
+  padding: 0.2rem 0.5rem !important;
+  font-size: 0.7rem !important;
+  width: 80% !important;
+  margin-left: 10px !important;
+}
+
+host ::ng-deep ng2-smart-table select .form-control ng-untouched ng-pristine ng-valid {
+  color: orangered !important;
+}

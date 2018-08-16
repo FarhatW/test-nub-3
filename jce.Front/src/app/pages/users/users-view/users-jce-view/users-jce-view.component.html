@@ -1,0 +1,44 @@
+<nb-card>
+  <nb-card-header>Le profile de l'utilisateur n° {{ userProfile?.id}}</nb-card-header>
+  <nb-card-body>
+    <div class="row">
+
+      <div class="col-12">
+        <div class="col-12">
+          <label><b>Nom : </b>{{ userProfile?.firstName }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>Prénom : </b>{{ userProfile?.lastName }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>Email : </b>{{ userProfile?.email }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>Téléphone : </b> {{ userProfile?.phone }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>Entreprise : </b> {{ userProfile?.address?.company }}</label>
+        </div>
+        <div class="col-12">
+          <label><b>Adresse : </b>
+            {{ userProfile?.address?.streetNumber }}
+            {{ userProfile?.address?.address1 }},
+            {{ userProfile?.address?.address2 }}
+          </label>
+        </div>
+        <div class="col-12">
+          <label><b>Code Postal : </b> {{ userProfile?.address?.postalCode }}
+          </label><br>
+          <label><b>Ville : </b> {{ userProfile?.address?.city }}
+          </label></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary btn-tn pull-left" [routerLink]="['/users/users-form/profile-form/', userProfile?.id]">Editer l'utilisateur</button>
+
+      </div>
+    </div>
+  </nb-card-body>
+
+</nb-card>

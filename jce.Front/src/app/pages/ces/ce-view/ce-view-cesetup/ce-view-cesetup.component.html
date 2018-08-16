@@ -1,0 +1,57 @@
+<nb-card>
+  <nb-card-header>
+      Configuration du CE
+  </nb-card-header>
+  <nb-card-body *ngIf="ceSetup; else elseCard">
+    <div class="row">
+      <div class="col-md-6">
+        <i [ngClass]="[ceSetup?.isEmployeeParticipation ?
+        'fa fa-check' : 'fa fa-times']"></i> &nbsp;
+        <label> Participation Employé</label>
+      </div>
+      <div class="col-md-6">
+        <i [ngClass]="[ceSetup?.isGroupingAllowed ?
+        'fa fa-check' : 'fa fa-times']"></i> &nbsp;
+        <label> Groupement Autorisé</label>
+      </div>
+      <div class="col-md-6">
+        <i [ngClass]="[ceSetup?.isHomeDelivery ?
+        'fa fa-check' : 'fa fa-times']"></i> &nbsp;
+        <label> Livraison à domicile</label>
+      </div>
+      <div class="col-md-6">
+        <i [ngClass]="[ceSetup?.isCeParticipation ?
+        'fa fa-check' : 'fa fa-times']"></i> &nbsp;
+        <label> Participation CE</label>
+      </div>
+      <div class="col-md-6">
+        <i [ngClass]="[ceSetup?.isOrderConfirmationMail ?
+        'fa fa-check' : 'fa fa-times']"></i> &nbsp;
+        <label> Mail de confirmation de commande</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <label>Message d'accueil</label>
+        <div class="input-group input-group-sm">
+        <input type="text" readonly
+               value="{{ ceSetup?.welcomeMessage }}"
+               class="form-control">
+      </div>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-tn pull-left"
+            [routerLink]="['/ces/ce-form/configce/', ceId]">
+      Aller à la configuration du CE
+    </button>
+  </nb-card-body>
+  <ng-template #elseCard>
+    <nb-card-body>
+      <p>Aucune configuration n'a été créée pour ce CE</p>
+      <button class="btn btn-primary btn-tn pull-left"
+              [routerLink]="['/ces/ce-form/configce/', ceId]">
+        Création de la configuration du CE
+      </button>
+    </nb-card-body>
+  </ng-template>
+</nb-card>

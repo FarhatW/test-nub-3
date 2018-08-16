@@ -1,0 +1,147 @@
+<!--<ngx-ces-list-navbar></ngx-ces-list-navbar>-->
+<nav class="navbar navbar-expand-lg navbar-dark teal mb-4">
+  <div class="col-md-2">
+    <h4>Liste des CE</h4>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" style="vertical-align: middle" routerLink="/ces/ce-form/new" [routerLinkActive]="['active']">Ajouter
+          un CE</a>
+      </li>
+      <div class="row">
+        <div class="col-md-2 offset-1">
+          <ngx-ces-list-pagination (perPage)="onPerPageChanged($event)">
+          </ngx-ces-list-pagination>
+        </div>
+        <div class="col-md-4">
+          <ngx-ces-list-per-user (userId)="onPerUserChanged($event)"
+                                 [users]="users"
+          ></ngx-ces-list-per-user>
+        </div>
+        <div class="col-md-5">
+          <ngx-ces-list-search (clearSearchArr)="_clearSearch($event)"
+                               (totalItems)="page.totalElements = $event"
+                               (setQuery)="_setQuery($event)"
+                               (setSearch)="_setSearch($event)"
+                               (searchResults)="_setSearchRows($event)"
+                               [getQuery]="query"
+                               #searchComp
+          ></ngx-ces-list-search>
+        </div>
+      </div>
+    </ul>
+  </div>
+</nav>
+
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-body>
+        <ngx-datatable
+          #productTable
+          [rows]="rows"
+          class="material"
+          [columnMode]="'force'"
+          (sort)="onSort($event)"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [rowHeight]="'auto'"
+          [externalPaging]="true"
+          [externalSorting]="true"
+          [count]="page.totalElements"
+          [offset]="page.pageNumber"
+          style="border-radius: 5px; box-shadow: 0px">
+          <ngx-datatable-column
+            [width]="70"
+            [sortable]="true"
+            [canAutoResize]="false"
+            [draggable]="false"
+            [resizeable]="false"
+            name="Id"
+            prop="id">
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="100"
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="true"
+            [resizeable]="true"
+            name="Nom"
+            prop="name"
+          ></ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="120"
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="true"
+            [resizeable]="true"
+            name="Entreprise"
+            prop="address.company"
+          >
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="100"
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="true"
+            [resizeable]="true"
+            name="Code Postal"
+            prop="address.postalCode">
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="true"
+            [resizeable]="true"
+            name="Ville"
+            prop="address.city">
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="true"
+            [resizeable]="true"
+            name="Administrateur"
+            prop="adminJceProfileId">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+
+              <!--{{ _setUserForList(value) }}-->
+
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="90"
+            [sortable]="false"
+            [canAutoResize]="false"
+            [draggable]="false"
+            [resizeable]="false"
+            name="Détails"
+            prop="id"
+          >
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <a [routerLink]="['/ces/ce-view/', value]"><i class="fa fa-eye" style="width: 100px"></i></a>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="90"
+            [sortable]="true"
+            [canAutoResize]="false"
+            [draggable]="false"
+            [resizeable]="false"
+            name="Supprimer"
+          >
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <i class="fa fa-times" style="width: 100px"></i>
+            </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+

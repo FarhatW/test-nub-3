@@ -1,0 +1,23 @@
+Index: src/app/@core/data/models/shared/address.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/@core/data/models/shared/address.ts	(revision 3342:172572)
++++ src/app/@core/data/models/shared/address.ts	(date 1527587772946)
+@@ -9,3 +9,15 @@
+   city: string;
+   addressExtra: string;
+ }
++export class AddressSave {
++  constructor(
++    public agency: string,
++    public service: string,
++    public company: string,
++    public streetNumber: number,
++    public address1: string,
++    public address2: string,
++    public postalCode: string,
++    public city: string,
++    public addressExtra: string){}
++}

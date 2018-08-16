@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark teal mb-4">
+  <div class="col-md-1">
+    <h4>Liste des CE</h4>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" style="vertical-align: middle" routerLink="new-product" [routerLinkActive]="['active']">Ajouter un produit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="new-batch" [routerLinkActive]="['active']">Ajouter un lot</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="excel-import/products" [routerLinkActive]="['active']">Import Excel Produits</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="excel-import/batches" [routerLinkActive]="['active']">Import Excel Lots</a>
+      </li>
+    </ul>
+    <div>
+      <label>Produits par page </label>
+      <select class='select-option' required [(ngModel)]='optionSelected'
+              (ngModelChange)='onOptionsSelected($event)'>
+        <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
+      </select>
+    </div>
+    <!--<div class="input-group input-group-sm col-md-3">-->
+    <!--<span *ngIf="searchInput.value.length > 0"-->
+          <!--(click)="clearSearch(); searchInput.value = ''"-->
+          <!--class="input-group-addon success onhover">-->
+    <!--<i class="ion-close-circled" aria-hidden="true"></i></span>-->
+      <!--<span *ngIf="searchInput.value.length < 1"-->
+            <!--class="input-group-addon success smallfont small">-->
+    <!--<i class="ion-search" aria-hidden="true"></i></span>-->
+      <!--<input type="text" class="form-control smallfont small"-->
+             <!--placeholder="Cherchez un produit (3 charactères min.)"-->
+             <!--(keyup)="_setSearch($event.target.value); searchTerm$.next($event.target.value)"-->
+             <!--#searchInput/>-->
+    <!--</div>-->
+    <ngx-ces-list-search (clearSearchArr)="_clearSearch($event)"
+                         (totalItems)="page.totalElements = $event"
+                         (setQuery)="_setQuery($event)"
+                         (setSearch)="_setSearch($event)"
+                         (searchResults)="_setSearchRows($event)"
+                         [getQuery]="query"
+                         #searchComp
+    ></ngx-ces-list-search>
+  </div>
+</nav>

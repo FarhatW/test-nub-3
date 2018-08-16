@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\web07\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_jce.Server.-1541075712.00" t="ExcludeRecursive" />
+    <e p="D:\projets\JCTeam\jce.project\jce.Server" t="IncludeFlat">
+      <e p="jce.BackOffice" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AgeGroupController.cs" t="Include" />
+          <e p="BatchController.cs" t="Include" />
+          <e p="CatalogController.cs" t="Include" />
+          <e p="CatalogTypeController.cs" t="Include" />
+          <e p="CeController.cs" t="Include" />
+          <e p="CeSetupController.cs" t="Include" />
+          <e p="ChildController.cs" t="Include" />
+          <e p="CommandController.cs" t="Include" />
+          <e p="EventController.cs" t="Include" />
+          <e p="FileController.cs" t="Include" />
+          <e p="GoodController.cs" t="Include" />
+          <e p="GoodDepartmentController.cs" t="Include" />
+          <e p="HisotyActionController.cs" t="Include" />
+          <e p="LetterIndexController.cs" t="Include" />
+          <e p="MailController.cs" t="Include" />
+          <e p="OriginController.cs" t="Include" />
+          <e p="PintelSheetController.cs" t="Include" />
+          <e p="ProductController.cs" t="Include" />
+          <e p="ProductTypeController.cs" t="Include" />
+          <e p="ProviderController.cs" t="Include" />
+          <e p="RoleController.cs" t="Include" />
+          <e p="ScheduleController.cs" t="Include" />
+          <e p="UserProfileController.cs" t="Include" />
+        </e>
+        <e p="jce.BackOffice.csproj" t="IncludeRecursive" />
+        <e p="jce.BackOffice.csproj.vspscc" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="jce.BackOffice.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="wwwroot" t="Include" />
+      </e>
+      <e p="jce.BusinessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Core" t="Include">
+          <e p="IActionManager.cs" t="Include" />
+          <e p="IEnumManager.cs" t="Include" />
+          <e p="IFileManager.cs" t="Include" />
+        </e>
+        <e p="Exceptions" t="Include">
+          <e p="JsonExceptionFilter.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="ColumnsHelper.cs" t="Include" />
+          <e p="Helper.cs" t="Include" />
+        </e>
+        <e p="IEnumManagers" t="Include">
+          <e p="IAgeGroupManager.cs" t="Include" />
+          <e p="ICatalogTypeManager.cs" t="Include" />
+          <e p="IGoodDepartmentManager.cs" t="Include" />
+          <e p="ILetterIndexManager.cs" t="Include" />
+          <e p="IOriginManager.cs" t="Include" />
+          <e p="IProductTypeManager.cs" t="Include" />
+        </e>
+        <e p="IManagers" t="Include">
+          <e p="IBatchManager.cs" t="Include" />
+          <e p="ICatalogManager.cs" t="Include" />
+          <e p="ICeManager.cs" t="Include" />
+          <e p="ICeSetupManager.cs" t="Include" />
+          <e p="IChildManager.cs" t="Include" />
+          <e p="ICommandManager.cs" t="Include" />
+          <e p="IEventManager.cs" t="Include" />
+          <e p="IFileManager.cs" t="Include" />
+          <e p="IGoodManager.cs" t="Include" />
+          <e p="IHistoryActionManager.cs" t="Include" />
+          <e p="IMailManager.cs" t="Include" />
+          <e p="IPintelSheetManager.cs" t="Include" />
+          <e p="IProductManager.cs" t="Include" />
+          <e p="IProviderManager.cs" t="Include" />
+          <e p="IRoleManager.cs" t="Include" />
+          <e p="IScheduleManager.cs" t="Include" />
+          <e p="IUserManager.cs" t="Include" />
+          <e p="IUserProfileManager.cs" t="Include" />
+        </e>
+        <e p="jce.BusinessLayer.csproj" t="IncludeRecursive" />
+        <e p="jce.BusinessLayer.csproj.vspscc" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="jce.BusinessLayer.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="SaveHistoryActionData" t="Include">
+          <e p="ISaveHistoryActionData.cs" t="Include" />
+          <e p="SaveHistoryActionData.cs" t="Include" />
+        </e>
+      </e>
+      <e p="jce.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Core" t="Include">
+          <e p="BaseEntity.cs" t="Include" />
+          <e p="EnumClasses" t="Include">
+            <e p="AgeGroup.cs" t="Include" />
+            <e p="CatalogProductLetter.cs" t="Include" />
+            <e p="CatalogType.cs" t="Include" />
+            <e p="GoodDepartment.cs" t="Include" />
+            <e p="LetterIndex.cs" t="Include" />
+            <e p="Origin.cs" t="Include" />
+            <e p="ProductType.cs" t="Include" />
+          </e>
+          <e p="EnumerationClass.cs" t="Include" />
+          <e p="ResourceEntity.cs" t="Include" />
+          <e p="SendMail.cs" t="Include" />
+        </e>
+        <e p="Entites" t="Include">
+          <e p="IdentityServerDbContext" t="Include">
+            <e p="Role.cs" t="Include" />
+            <e p="User.cs" t="Include" />
+            <e p="UserRole.cs" t="Include" />
+          </e>
+          <e p="JceDbContext" t="Include">
+            <e p="Batch.cs" t="Include" />
+            <e p="Catalog.cs" t="Include" />
+            <e p="CatalogGood.cs" t="Include" />
+            <e p="Ce.cs" t="Include" />
+            <e p="CeSetup.cs" t="Include" />
+            <e p="Child.cs" t="Include" />
+            <e p="Command.cs" t="Include" />
+            <e p="CommandChildProduct.cs" t="Include" />
+            <e p="Event.cs" t="Include" />
+            <e p="File.cs" t="Include" />
+            <e p="Good.cs" t="Include" />
+            <e p="HistoryAction.cs" t="Include" />
+            <e p="Mail.cs" t="Include" />
+            <e p="PintelSheet.cs" t="Include" />
+            <e p="Product.cs" t="Include" />
+            <e p="Provider.cs" t="Include" />
+            <e p="Schedule.cs" t="Include" />
+            <e p="ScheduleEmployee.cs" t="Include" />
+            <e p="UserProfile.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Extentions" t="Include">
+          <e p="IQueryObject.cs" t="Include" />
+          <e p="QueryableExtensions.cs" t="Include" />
+          <e p="QueryResult.cs" t="Include" />
+        </e>
+        <e p="jce.Common.csproj" t="IncludeRecursive" />
+        <e p="jce.Common.csproj.vspscc" t="Include" />
+        <e p="Mapping" t="Include">
+          <e p="BatchMappingProfile.cs" t="Include" />
+          <e p="CatalogMappingProfile.cs" t="Include" />
+          <e p="CeMappingProfile.cs" t="Include" />
+          <e p="CeSetupMappingProfile.cs" t="Include" />
+          <e p="CommandMappingProfile.cs" t="Include" />
+          <e p="EmployeeMappingProfile.cs" t="Include" />
+          <e p="EventMappingProfile.cs" t="Include" />
+          <e p="GoodMappingProfile.cs" t="Include" />
+          <e p="HistoryActionMappingProfile.cs" t="Include" />
+          <e p="MailMappingProfile.cs" t="Include" />
+          <e p="PintelSheetMappingProfile.cs" t="Include" />
+          <e p="ProductMappingProfile.cs" t="Include" />
+          <e p="ProviderMappingProfile.cs" t="Include" />
+          <e p="ScheduleMappingProfile.cs" t="Include" />
+          <e p="UserMapping.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="jce.Common.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Query" t="Include">
+          <e p="BatchQuery.cs" t="Include" />
+          <e p="CatalogQuery.cs" t="Include" />
+          <e p="CeQuery.cs" t="Include" />
+          <e p="CeSetupQuery.cs" t="Include" />
+          <e p="CommandQuery.cs" t="Include" />
+          <e p="DefaultQuery.cs" t="Include" />
+          <e p="EventQuery.cs" t="Include" />
+          <e p="FileQuery.cs" t="Include" />
+          <e p="GoodQuery.cs" t="Include" />
+          <e p="HistoryActionQuery.cs" t="Include" />
+          <e p="MailQuery.cs" t="Include" />
+          <e p="PintelSheetQuery.cs" t="Include" />
+          <e p="ProductQuery.cs" t="Include" />
+          <e p="ProviderQuery.cs" t="Include" />
+          <e p="ScheduleQuery.cs" t="Include" />
+          <e p="UserProfileQuery.cs" t="Include" />
+          <e p="UserQuery.cs" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="AddressResource.cs" t="Include" />
+          <e p="Batch" t="Include">
+            <e p="BatchListResource.cs" t="Include" />
+            <e p="BatchQueryResource.cs" t="Include" />
+            <e p="BatchResource.cs" t="Include" />
+            <e p="BatchSaveResource.cs" t="Include" />
+          </e>
+          <e p="Catalog" t="Include">
+            <e p="CatalogLettersSaveResource$.cs" t="Include" />
+            <e p="CatalogQueryResource.cs" t="Include" />
+            <e p="CatalogResource.cs" t="Include" />
+            <e p="CatalogSaveResource.cs" t="Include" />
+          </e>
+          <e p="CE" t="Include">
+            <e p="CeQueryResource.cs" t="Include" />
+            <e p="CeResource.cs" t="Include" />
+            <e p="CeSaveResource.cs" t="Include" />
+          </e>
+          <e p="CeSetup" t="Include">
+            <e p="CeSetupQueryResource.cs" t="Include" />
+            <e p="CeSetupResource.cs" t="Include" />
+            <e p="CeSetupSaveResource.cs" t="Include" />
+            <e p="MailInCeSetup.cs" t="Include" />
+          </e>
+          <e p="ChildResource.cs" t="Include" />
+          <e p="Command" t="Include">
+            <e p="CommandChildProductResource.cs" t="Include" />
+            <e p="CommandQueryResource.cs" t="Include" />
+            <e p="CommandResource.cs" t="Include" />
+            <e p="CommandSaveResource.cs" t="Include" />
+          </e>
+          <e p="Consent" t="Include">
+            <e p="Consent.cs" t="Include" />
+            <e p="ConsentInputResource.cs" t="Include" />
+            <e p="ConsentOptions.cs" t="Include" />
+            <e p="ConsentQuery.cs" t="Include" />
+            <e p="ConsentResource.cs" t="Include" />
+            <e p="ProcessConsentResult.cs" t="Include" />
+            <e p="ScopeResource.cs" t="Include" />
+          </e>
+          <e p="Event" t="Include">
+            <e p="EventQueryResource.cs" t="Include" />
+            <e p="EventResource.cs" t="Include" />
+          </e>
+          <e p="File" t="Include">
+            <e p="FileQueryResource.cs" t="Include" />
+            <e p="FileResource.cs" t="Include" />
+          </e>
+          <e p="FilterResource.cs" t="Include" />
+          <e p="Good" t="Include">
+            <e p="GoodQueryResource.cs" t="Include" />
+            <e p="GoodResource.cs" t="Include" />
+            <e p="GoodSaveResource.cs" t="Include" />
+            <e p="GoodToCatalogResource.cs" t="Include" />
+            <e p="GoodToCatalogSaveResource.cs" t="Include" />
+          </e>
+          <e p="HistoryActionQueryResource.cs" t="Include" />
+          <e p="HistoryActionResource.cs" t="Include" />
+          <e p="Mail" t="Include">
+            <e p="MailQueryResource.cs" t="Include" />
+            <e p="MailResource.cs" t="Include" />
+            <e p="MailSaveResource.cs" t="Include" />
+          </e>
+          <e p="PintelSheet" t="Include">
+            <e p="PintelQueryResource.cs" t="Include" />
+            <e p="PintelSheetResource.cs" t="Include" />
+            <e p="PintelSheetSaveResource.cs" t="Include" />
+          </e>
+          <e p="Product" t="Include">
+            <e p="ProductAddToCatalogResource.cs" t="Include" />
+            <e p="ProductListResource.cs" t="Include" />
+            <e p="ProductQueryResource.cs" t="Include" />
+            <e p="ProductResource.cs" t="Include" />
+            <e p="ProductSaveResource.cs" t="Include" />
+            <e p="ProductToBatchResource.cs" t="Include" />
+          </e>
+          <e p="Provider" t="Include">
+            <e p="ProviderQueryResource.cs" t="Include" />
+            <e p="ProviderResource.cs" t="Include" />
+            <e p="ProviderSaveResource.cs" t="Include" />
+          </e>
+          <e p="RoleResource.cs" t="Include" />
+          <e p="Schedule" t="Include">
+            <e p="InscriptionRessource.cs" t="Include" />
+            <e p="ScheduleQueryResource.cs" t="Include" />
+            <e p="ScheduleRessource.cs" t="Include" />
+            <e p="ScheduleRessourceForEvent.cs" t="Include" />
+            <e p="ScheduleSaveRessource.cs" t="Include" />
+          </e>
+          <e p="SchedulesEmployee" t="Include">
+            <e p="SchedulesEmployeeResource.cs" t="Include" />
+          </e>
+          <e p="user" t="Include">
+            <e p="SaveUserResource.cs" t="Include" />
+            <e p="UserQueryResource.cs" t="Include" />
+            <e p="UserResource.cs" t="Include" />
+          </e>
+          <e p="UserProfile" t="Include">
+            <e p="AuthResource.cs" t="Include" />
+            <e p="SaveUserProfileResource.cs" t="Include" />
+            <e p="UserProfileQueryResource.cs" t="Include" />
+            <e p="UserProfileResource.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Setting" t="Include">
+          <e p="AuthSetting.cs" t="Include" />
+          <e p="PhotoSettings.cs" t="Include" />
+        </e>
+      </e>
+      <e p="jce.DataAccess" t="IncludeRecursive">
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Core" t="Include">
+          <e p="dbContext" t="Include">
+            <e p="IdentityServerDbContext.cs" t="Include" />
+            <e p="JceDbContext.cs" t="Include" />
+          </e>
+          <e p="DbFactory.cs" t="Include" />
+          <e p="FactoryDb_Migration" t="Include">
+            <e p="ConfigurationDbContextFactory.cs" t="Include" />
+            <e p="IdentityServerDbContextFactory.cs" t="Include" />
+            <e p="JceDbContextFactory.cs" t="Include" />
+            <e p="PersistedGrantDbContextFactory.cs" t="Include" />
+          </e>
+          <e p="IDbFactory.cs" t="Include" />
+          <e p="IdentityServerRepository.cs" t="Include" />
+          <e p="IRepository.cs" t="Include" />
+          <e p="IUnitOfWork.cs" t="Include" />
+          <e p="JceRepository.cs" t="Include" />
+          <e p="UnitOfWork.cs" t="Include" />
+        </e>
+        <e p="Data" t="Include">
+          <e p="Migrations" t="Include">
+            <e p="IdentityServer" t="Include">
+              <e p="ConfigurationDb" t="Include">
+                <e p="20180122083710_InitialIdentityServerConfigurationDbMigration.cs" t="Include" />
+                <e p="20180122083710_InitialIdentityServerConfigurationDbMigration.Designer.cs" t="Include" />
+                <e p="ConfigurationDbContextModelSnapshot.cs" t="Include" />
+              </e>
+              <e p="PersistedGrantDb" t="Include">
+                <e p="20180122083654_InitialIdentityServerPersistedGrantDbMigration.cs" t="Include" />
+                <e p="20180122083654_InitialIdentityServerPersistedGrantDbMigration.Designer.cs" t="Include" />
+                <e p="PersistedGrantDbContextModelSnapshot.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="jce.DataAccess.csproj" t="IncludeRecursive" />
+        <e p="jce.DataAccess.csproj.vspscc" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="jce.DataAccess.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="jce.IdentityServer" t="IncludeRecursive">
+        <e p=".angular-cli.json" t="Include" />
+        <e p=".gitignore" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ClientApp" t="Include">
+          <e p="app" t="Include">
+            <e p="app-routing.module.ts" t="Include" />
+            <e p="app.browser.module.ts" t="Include" />
+            <e p="app.error-handler.ts" t="Include" />
+            <e p="app.server.module.ts" t="Include" />
+            <e p="app.shared.module.ts" t="Include" />
+            <e p="components" t="Include">
+              <e p="app" t="Include">
+                <e p="app.component.css" t="Include" />
+                <e p="app.component.html" t="Include" />
+                <e p="app.component.ts" t="Include" />
+              </e>
+              <e p="Consent" t="Include">
+                <e p="consent.component.css" t="Include" />
+                <e p="consent.component.html" t="Include" />
+                <e p="consent.component.spec.ts" t="Include" />
+                <e p="consent.component.ts" t="Include" />
+              </e>
+              <e p="counter" t="Include">
+                <e p="counter.component.html" t="Include" />
+                <e p="counter.component.spec.ts" t="Include" />
+                <e p="counter.component.ts" t="Include" />
+              </e>
+              <e p="fetchdata" t="Include">
+                <e p="fetchdata.component.html" t="Include" />
+                <e p="fetchdata.component.ts" t="Include" />
+              </e>
+              <e p="home" t="Include">
+                <e p="home.component.html" t="Include" />
+                <e p="home.component.ts" t="Include" />
+              </e>
+              <e p="login" t="Include">
+                <e p="login.component.css" t="Include" />
+                <e p="login.component.html" t="Include" />
+                <e p="login.component.spec.ts" t="Include" />
+                <e p="login.component.ts" t="Include" />
+              </e>
+              <e p="navmenu" t="Include">
+                <e p="navmenu.component.css" t="Include" />
+                <e p="navmenu.component.html" t="Include" />
+                <e p="navmenu.component.ts" t="Include" />
+              </e>
+            </e>
+            <e p="Models" t="Include">
+              <e p="Address.ts" t="Include" />
+              <e p="Consent.ts" t="Include" />
+              <e p="ProcessConsentResult.ts" t="Include" />
+              <e p="ProcessLoginResult.ts" t="Include" />
+              <e p="role.ts" t="Include" />
+              <e p="SaveUser.ts" t="Include" />
+              <e p="Scopes.ts" t="Include" />
+              <e p="ScopesModel.ts" t="Include" />
+              <e p="user.ts" t="Include" />
+            </e>
+            <e p="services" t="Include">
+              <e p="authentication.service.ts" t="Include" />
+              <e p="consent.service.ts" t="Include" />
+              <e p="helper.service.ts" t="Include" />
+              <e p="JceInterceptor.service.ts" t="Include" />
+              <e p="user.service.ts" t="Include" />
+            </e>
+          </e>
+          <e p="assets" t="Include">
+            <e p="login-animation.js" t="Include" />
+          </e>
+          <e p="boot.browser.ts" t="Include" />
+          <e p="boot.server.ts" t="Include" />
+          <e p="dist" t="Include">
+            <e p="89889688147bd7575d6327160d64e760.svg" t="Include" />
+            <e p="main-server.js" t="Include" />
+            <e p="vendor.js" t="Include" />
+          </e>
+          <e p="test" t="Include">
+            <e p="boot-tests.ts" t="Include" />
+            <e p="karma.conf.js" t="Include" />
+          </e>
+        </e>
+        <e p="Config.cs" t="Include" />
+        <e p="Controllers" t="Include">
+          <e p="ConsentController.cs" t="Include" />
+          <e p="HomeController.cs" t="Include" />
+          <e p="ProcessLoginResult.cs" t="Include" />
+          <e p="RoleIdenityController.cs" t="Include" />
+          <e p="SampleDataController.cs" t="Include" />
+          <e p="SecurityHeadersAttribute.cs" t="Include" />
+          <e p="UserIdentityController.cs" t="Include" />
+        </e>
+        <e p="jce.IdentityServer.csproj" t="IncludeRecursive" />
+        <e p="jce.IdentityServer.csproj.vspscc" t="Include" />
+        <e p="npm-debug.log" t="Include" />
+        <e p="npm-shrinkwrap.json" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="jce.IdentityServer.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="package.json" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="SeedData.cs" t="Include" />
+        <e p="Startup.cs" t="Include" />
+        <e p="tempkey.rsa" t="Include" />
+        <e p="tsconfig.json" t="Include" />
+        <e p="Views" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="home" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="_Layout.cshtml" t="Include" />
+            <e p="Error.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="webpack.config.js" t="Include" />
+        <e p="webpack.config.vendor.js" t="Include" />
+        <e p="wwwroot" t="Include">
+          <e p="dist" t="Include">
+            <e p="89889688147bd7575d6327160d64e760.svg" t="Include" />
+            <e p="main-client.js" t="Include" />
+            <e p="main-client.js.map" t="Include" />
+            <e p="vendor-manifest.json" t="Include" />
+            <e p="vendor.css" t="Include" />
+            <e p="vendor.js" t="Include" />
+          </e>
+          <e p="favicon.ico" t="Include" />
+        </e>
+      </e>
+      <e p="jce.Server.sln" t="IncludeFlat" />
+      <e p="Managers\Managers" t="IncludeRecursive">
+        <e p="AgeGroupManager.cs" t="Include" />
+        <e p="BatchManager.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CatalogManager.cs" t="Include" />
+        <e p="CatalogTypeManager.cs" t="Include" />
+        <e p="CeManager.cs" t="Include" />
+        <e p="CeSetupManager.cs" t="Include" />
+        <e p="ChildManager.cs" t="Include" />
+        <e p="CommandManager.cs" t="Include" />
+        <e p="EventManager.cs" t="Include" />
+        <e p="FileManager.cs" t="Include" />
+        <e p="GoodDepartmentManager.cs" t="Include" />
+        <e p="GoodManager.cs" t="Include" />
+        <e p="HistoryActionManager.cs" t="Include" />
+        <e p="LetterIndexManager.cs" t="Include" />
+        <e p="MailManager.cs" t="Include" />
+        <e p="Managers.csproj" t="IncludeRecursive" />
+        <e p="Managers.csproj.vspscc" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="Managers.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="OriginManager.cs" t="Include" />
+        <e p="PintelSheetManager.cs" t="Include" />
+        <e p="ProductManager.cs" t="Include" />
+        <e p="ProductTypeManager.cs" t="Include" />
+        <e p="ProviderManager.cs" t="Include" />
+        <e p="RoleManager.cs" t="Include" />
+        <e p="ScheduleManager.cs" t="Include" />
+        <e p="UserManager.cs" t="Include" />
+        <e p="UserProfileManager.cs" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

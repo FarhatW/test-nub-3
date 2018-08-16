@@ -1,0 +1,8 @@
+<nb-card style="height: 590px">
+  <nb-card-header>Historique des ajouts</nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source"
+                     (editConfirm)="onEditConfirm($event)"
+                     (deleteConfirm)="onDeleteConfirmation($event)"></ng2-smart-table>
+  </nb-card-body>
+</nb-card>

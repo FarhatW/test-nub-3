@@ -1,0 +1,33 @@
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<div id="flipkart-navbar" class="navbar-expand-lg navbar-dark teal mb-4">
+  <div class="container" >
+    <div class="row row1">
+      <ul class="largenav pull-right">
+        <li class="upper-links " *ngFor="let r of routes let i = index" [attr.data-index]="i">
+          <a class="links btn btn-default" style="padding: 0px" routerLink="{{r.route}}" [routerLinkActive]="['active']">
+           <i class="{{r.data[i]}}"></i>  {{r.title}}
+          </a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="row  row2">
+      <div class="col-2 btn btn-default">
+
+        <h5 style="margin:0px;"><span class="largenav">{{title}}</span></h5>
+      </div>
+      <div class="flipkart-navbar-search smallsearch col-sm-10 col-xs-11">
+        <div class="row">
+            <ngx-shared-search class="col-4 pull-left">  </ngx-shared-search>
+            <ngx-shared-item-per-page  class="col-3  pull-right"> </ngx-shared-item-per-page>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+

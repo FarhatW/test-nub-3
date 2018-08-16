@@ -1,0 +1,117 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <form *ngIf="userAuthForm" [formGroup]="userAuthForm" (ngSubmit)="onSubmit()">
+      <nb-card>
+        <nb-card-header>
+          <div class="row">
+            <div class="col-md-9">
+              <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; {{ cardHeaderText }}
+            </div>
+
+          </div>
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">Email*</label>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon "
+                          [ngClass]="[ userFormErrorsBool[email.id] ? 'danger' : 'success']">
+                      <i class="fa fa-envelope-o " aria-hidden="true"></i></span>
+                  <input type="email"
+                         class="form-control"
+                         [ngClass]="[ userFormErrorsBool[email.id] ? 'form-control-danger' : '']"
+                         id="email"
+                         #email
+                         (blur)="_blurError(userFormErrors.email, $event)"
+                         placeholder="Email du user"
+                         formControlName="email">
+                </div>
+                <div *ngIf="userFormErrors.email && userFormErrorsBool.email"
+                             class="small text-danger text-usernter"
+                             [innerHTML]="userFormErrors.email">
+              </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="userName">Nom d'utilisateur*</label>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon "
+                          [ngClass]="[ userFormErrorsBool[userName.id] ? 'danger' : 'success']">
+                      <i class="fa fa-user-o" aria-hidden="true"></i></span>
+                  <input type="userName"
+                         class="form-control"
+                         [ngClass]="[ userFormErrorsBool[userName.id] ? 'form-control-danger' : '']"
+                         id="userName"
+                         #userName
+                         (blur)="_blurError(userFormErrors.userName, $event)"
+                         placeholder="nom  du user"
+                         formControlName="userName">
+                </div>
+                <div *ngIf="userFormErrors.userName && userFormErrorsBool.userName"
+                     class="small text-danger text-usernter"
+                     [innerHTML]="userFormErrors.userName">
+                </div>
+              </div>
+            </div>
+          </div>
+          <ngx-users-password-form (IsPasswordConfirm)="getPasswordConfirming($event)" (pwd)="getPasswordValue($event)"></ngx-users-password-form>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label >Liste des Roles*</label>
+                <div>
+                  <div class=" btn-group" *ngFor="let role of availableRoles"
+                       pDraggable="roles"
+                       (onDragStart)="role.enable && dragStart($event,role)" (onDragEnd)="dragEnd($event)">
+                    <button type="button" class="btn  btn-space" [ngClass]="role.enable ? 'btn-danger' : 'btn-default' "  draggable="false" >{{role.name}}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6"  pDroppable="roles" (onDrop)="drop($event)">
+              <label  for="roles">Liste des Roles Sélectionnés*</label>
+              <div class="form-control" style="border: #00f9a6 2px solid" pDroppable="roles" (onDrop)="drop($event)"  >
+                <div class="btn-group"  >
+                  <button type="button" id="roles"  #roles class="btn btn-danger btn-space" *ngFor="let role of selectedRoles">{{role.name}}
+                    <i class="fa fa-times" (click)="deleteRole($event, role)"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group input-group-sm">
+                <div class="container-btn">
+                  <button class="btn btn-primary btn-tn"
+                          type="submit"
+                          [attr.disabled]="userAuthForm.invalid || submitting || !IsPasswordConfirm || selectedRoles.length < 1 ? true : null"
+                          [innerText]="submitBtnText"></button>
+                  <button class="btn btn-warning btn-tn"
+                          type="button"
+                          (click)="_resetForm($event)"
+                          [innerText]="resetBtnText"></button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </nb-card-body>
+        <nb-card-footer>
+          <small class="pull-right"><i>Les champs marqués d'une * sont obligatoires</i></small>
+        </nb-card-footer>
+      </nb-card>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.Common\\jce.Common.csproj",
+    "projectName": "jce.Common",
+    "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.Common\\jce.Common.csproj",
+    "outputPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.Common\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "noWarn": [
+        "NU1605"
+      ],
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "AutoMapper": {
+          "target": "Package",
+          "version": "[6.2.2, )"
+        },
+        "IdentityServer4": {
+          "target": "Package",
+          "version": "[2.1.2, )"
+        },
+        "MailKit": {
+          "target": "Package",
+          "version": "[2.0.1, )"
+        },
+        "Microsoft.AspNetCore.Identity": {
+          "target": "Package",
+          "version": "[2.1.0-preview1-final, )"
+        },
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[2.0.2, )"
+        },
+        "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+          "target": "Package",
+          "version": "[2.1.0-preview1-final, )"
+        },
+        "Microsoft.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[2.0.2, )"
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.0.0, )",
+          "autoReferenced": true
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

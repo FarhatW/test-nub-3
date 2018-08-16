@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jce.BusinessLayer", "jce.BusinessLayer\jce.BusinessLayer.csproj", "{56BA5D33-27ED-4156-ADE7-7DC74C6C2A8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jce.Common", "jce.Common\jce.Common.csproj", "{FA1F6B11-B8E0-48CB-B4C3-E7638EEE4ADA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jce.DataAccess", "jce.DataAccess\jce.DataAccess.csproj", "{22D94772-8A75-48D3-A9A1-6779AE4DA721}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jce.BackOffice", "jce.BackOffice\jce.BackOffice.csproj", "{BDFF7F2C-2CE4-4D09-95D1-B2222D2A01FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Managers", "Managers\Managers\Managers.csproj", "{70BA0FDB-48B0-441F-AD2C-1F805A391A4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jce.IdentityServer", "jce.IdentityServer\jce.IdentityServer.csproj", "{FCD8BC23-839D-4801-BF3A-E638F7A10420}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestJCE.IntegrationTests", "TestJCE.IntegrationTests\TestJCE.IntegrationTests.csproj", "{D19BC439-3029-4596-B313-BD8225694468}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestJCE.UnitTests", "TestJCE.UnitTests\TestJCE.UnitTests.csproj", "{5E7983F1-10BA-4FF5-9CFA-1F82F44C45C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56BA5D33-27ED-4156-ADE7-7DC74C6C2A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BA5D33-27ED-4156-ADE7-7DC74C6C2A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56BA5D33-27ED-4156-ADE7-7DC74C6C2A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56BA5D33-27ED-4156-ADE7-7DC74C6C2A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA1F6B11-B8E0-48CB-B4C3-E7638EEE4ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA1F6B11-B8E0-48CB-B4C3-E7638EEE4ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA1F6B11-B8E0-48CB-B4C3-E7638EEE4ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA1F6B11-B8E0-48CB-B4C3-E7638EEE4ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22D94772-8A75-48D3-A9A1-6779AE4DA721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22D94772-8A75-48D3-A9A1-6779AE4DA721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22D94772-8A75-48D3-A9A1-6779AE4DA721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22D94772-8A75-48D3-A9A1-6779AE4DA721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFF7F2C-2CE4-4D09-95D1-B2222D2A01FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFF7F2C-2CE4-4D09-95D1-B2222D2A01FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFF7F2C-2CE4-4D09-95D1-B2222D2A01FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFF7F2C-2CE4-4D09-95D1-B2222D2A01FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70BA0FDB-48B0-441F-AD2C-1F805A391A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70BA0FDB-48B0-441F-AD2C-1F805A391A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70BA0FDB-48B0-441F-AD2C-1F805A391A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70BA0FDB-48B0-441F-AD2C-1F805A391A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD8BC23-839D-4801-BF3A-E638F7A10420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD8BC23-839D-4801-BF3A-E638F7A10420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD8BC23-839D-4801-BF3A-E638F7A10420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD8BC23-839D-4801-BF3A-E638F7A10420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D19BC439-3029-4596-B313-BD8225694468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D19BC439-3029-4596-B313-BD8225694468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D19BC439-3029-4596-B313-BD8225694468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D19BC439-3029-4596-B313-BD8225694468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7983F1-10BA-4FF5-9CFA-1F82F44C45C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7983F1-10BA-4FF5-9CFA-1F82F44C45C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7983F1-10BA-4FF5-9CFA-1F82F44C45C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7983F1-10BA-4FF5-9CFA-1F82F44C45C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2B02998-2EA8-45AD-B185-90F5CABF4028}
+		        SolutionGuid = {31FEB0B3-25BA-4811-A4C7-D68C59D4BEB1}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://jce-sync:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = jce.BusinessLayer\\jce.BusinessLayer.csproj
+		SccProjectName1 = jce.BusinessLayer
+		SccLocalPath1 = jce.BusinessLayer
+		SccProjectUniqueName2 = jce.Common\\jce.Common.csproj
+		SccProjectName2 = jce.Common
+		SccLocalPath2 = jce.Common
+		SccProjectUniqueName3 = jce.DataAccess\\jce.DataAccess.csproj
+		SccProjectName3 = jce.DataAccess
+		SccLocalPath3 = jce.DataAccess
+		SccProjectUniqueName4 = jce.BackOffice\\jce.BackOffice.csproj
+		SccProjectName4 = jce.BackOffice
+		SccLocalPath4 = jce.BackOffice
+		SccProjectUniqueName5 = Managers\\Managers\\Managers.csproj
+		SccProjectName5 = Managers/Managers
+		SccLocalPath5 = Managers\\Managers
+		SccProjectUniqueName6 = jce.IdentityServer\\jce.IdentityServer.csproj
+		SccProjectName6 = jce.IdentityServer
+		SccLocalPath6 = jce.IdentityServer
+		SccProjectUniqueName7 = TestJCE.IntegrationTests\\TestJCE.IntegrationTests.csproj
+		SccProjectName7 = TestJCE.IntegrationTests
+		SccLocalPath7 = TestJCE.IntegrationTests
+		SccProjectUniqueName8 = TestJCE.UnitTests\\TestJCE.UnitTests.csproj
+		SccProjectName8 = TestJCE.UnitTests
+		SccLocalPath8 = TestJCE.UnitTests
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+D:\projets\JCTeam\jce.project\jce.Server\jce.Common\bin\Debug\netcoreapp2.0\jce.Common.deps.json
+D:\projets\JCTeam\jce.project\jce.Server\jce.Common\bin\Debug\netcoreapp2.0\jce.Common.dll
+D:\projets\JCTeam\jce.project\jce.Server\jce.Common\bin\Debug\netcoreapp2.0\jce.Common.pdb
+D:\projets\JCTeam\jce.project\jce.Server\jce.Common\obj\Debug\netcoreapp2.0\jce.Common.csproj.CoreCompileInputs.cache
+D:\projets\JCTeam\jce.project\jce.Server\jce.Common\obj\Debug\netcoreapp2.0\jce.Common.AssemblyInfoInputs.cache
+D:\projets\JCTeam\jce.project\jce.Server\jce.Common\obj\Debug\netcoreapp2.0\jce.Common.AssemblyInfo.cs
+D:\projets\JCTeam\jce.project\jce.Server\jce.Common\obj\Debug\netcoreapp2.0\jce.Common.dll
+D:\projets\JCTeam\jce.project\jce.Server\jce.Common\obj\Debug\netcoreapp2.0\jce.Common.pdb
+D:\projets\JCTeam\jce.project\jce.Server\jce.Common\obj\Debug\netcoreapp2.0\jce.Common.csprojAssemblyReference.cache

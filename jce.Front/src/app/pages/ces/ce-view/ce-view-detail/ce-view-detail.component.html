@@ -1,0 +1,46 @@
+<nb-card>
+  <nb-card-header>Infos du CE n° {{ ce?.id}}</nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-md-6">
+        <img class="image" style="max-width: 180px; padding-bottom: 5px;"
+             src="assets/images/img-placeholder.png"
+             alt="{{ ce?.logo}}"/>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-12">
+          <label><b>Nom du CE : </b>{{ ce?.name }}</label>
+        </div>
+        <div class="col-md-12">
+          <label><b>Entreprise : </b> {{ ce?.address?.company }}</label>
+        </div>
+        <div class="col-md-12">
+          <label><b>Téléphone : </b> {{ ce?.telephone }}</label>
+        </div>
+        <div class="col-md-12">
+          <label><b>Fax : </b> {{ ce?.fax }}</label>
+        </div>
+        <div class="col-md-12">
+          <label><b>Adresse : </b>
+            {{ ce?.address?.streetNumber }}
+            {{ ce?.address?.address1 }},
+            {{ ce?.address?.address2 }}
+          </label>
+        </div>
+          <div class="col-md-12">
+            <label><b>Code Postal : </b> {{ ce?.address?.postalCode }}
+          </label>
+            <label><b>Ville : </b> {{ ce?.address?.city }}
+          </label></div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary btn-tn pull-left" (click)="toCeEdit()">Editer le CE</button>
+      </div>
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+   Créé par : {{ ce?.createdBy}} le ...
+  </nb-card-footer>
+</nb-card>

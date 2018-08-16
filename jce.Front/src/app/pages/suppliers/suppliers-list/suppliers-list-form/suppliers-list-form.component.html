@@ -1,0 +1,102 @@
+<nb-card>
+  <nb-card-header>
+    {{ cardHeaderTitle }}
+    <span class="pull-right grey">{{ cardHeaderId }}</span>
+  </nb-card-header>
+  <nb-card-body>
+    <form *ngIf="supplierForm" [formGroup]="supplierForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <nb-checkbox [formControl]="supplierForm.controls['isEnabled']"
+                         name="isEnabled"
+                         id="isEnabled"
+            >Actif
+            </nb-checkbox>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Ref. Fournisseur : </label>
+            <div class="input-group input-group-sm">
+              <input type="text" placeholder="Référence Fournisseur"
+                     class="form-control"
+                     [ngClass]="[ supplierFormErrorsBool[supplierRef.id] ?
+                          'form-control-danger' : '']"
+                     (blur)="_blurError(supplierFormErrors.supplierRef, $event)"
+                     id="supplierRef"
+                     formControlName="supplierRef"
+                     #supplierRef
+              />
+
+            </div>
+            <div *ngIf="supplierFormErrors.supplierRef && supplierFormErrorsBool.supplierRef"
+                 class="small text-danger text-center"
+                 [innerHTML]="supplierFormErrors.supplierRef">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="form-group">
+            <label>Nom du Fournisseur : </label>
+            <div class="input-group input-group-sm">
+              <input type="text" placeholder="Nom du Fournisseur"
+                     class="form-control"
+                     [ngClass]="[ supplierFormErrorsBool[name.id] ?
+                          'form-control-danger' : '']"
+                     (blur)="_blurError(supplierFormErrors.name, $event)"
+                     id="name"
+                     formControlName="name"
+                     #name
+              />
+            </div>
+            <div *ngIf="supplierFormErrors.name && supplierFormErrorsBool.name"
+                 class="small text-danger text-center"
+                 [innerHTML]="supplierFormErrors.name">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Description : </label>
+            <div class="input-group input-group-sm">
+              <textarea rows="6" placeholder="Description du fournisseur"
+                        class="form-control smallfont"
+                        [ngClass]="[ supplierFormErrorsBool[description.id] ?
+                          'form-control-danger' : '']"
+                        formControlName="description"
+                        #description
+                        (blur)="_blurError(supplierFormErrors.description, $event)"
+              ></textarea>
+            </div>
+            <div *ngIf="supplierFormErrors.description && supplierFormErrorsBool.description"
+                 class="small text-danger text-center"
+                 [innerHTML]="supplierFormErrors.description">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group input-group-sm">
+            <div class="container-btn">
+              <button class="btn btn-primary btn-tn"
+                      type="submit"
+                      [attr.disabled]="supplierForm.invalid || submitting ? true : null"
+                      [innerText]="submitBtnText"></button>
+              <span class="btn btn-danger btn-tn pull right" (click)="onClose()">Fermer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

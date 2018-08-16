@@ -1,0 +1,273 @@
+<div class="row">
+  <div class="col-md-12">
+    <form *ngIf="ceForm" [formGroup]="ceForm" (ngSubmit)="onSubmit()">
+      <nb-card>
+        <nb-card-header>
+          <div class="row">
+            <div class="col-md-6">
+              <i class="fa fa-plus" aria-hidden="true"></i>&nbsp; &nbsp; &nbsp; {{ cardHeaderText }}
+            </div>
+
+
+          </div>
+        </nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Utilisateur associé</label>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon "
+                        [ngClass]="[ ceFormErrorsBool[adminJceProfileId.id] ? 'danger' : 'success']">
+                      <i class="fa fa-user" aria-hidden="true"></i></span>
+                  <select class="form-control small"
+                          name="adminJceProfileId"
+                          [ngClass]="[ ceFormErrorsBool[adminJceProfileId.id] ?
+                          'form-control-danger' : '']"
+                          id="adminJceProfileId"
+                          #adminJceProfileId
+                          [compareWith]="cef._compare"
+                          (blur)="_blurError(ceFormErrors.adminJceProfileId, $event)"
+                          formControlName="adminJceProfileId">
+                    <option [ngValue]="null">Sélectionnez un Commercial</option>
+                    <option *ngFor="let user of users"
+                            [ngValue]="user.id">
+                      {{ user.id}} - {{ userService.setNameFirstName(user) }}
+                    </option>
+                  </select>
+                </div>
+                <div *ngIf="ceFormErrors.adminJceProfileId && ceFormErrorsBool.adminJceProfileId"
+                     class="small text-danger text-center"
+                     [innerHTML]="ceFormErrors.adminJceProfileId"
+                     [@expandCollapse]>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 offset-4 vcenter">
+              <nb-checkbox
+                id="isActif"
+                name="isActif"
+                formControlName="isActif">
+                Actif
+              </nb-checkbox>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="name">Nom du CE*</label>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon "
+                          [ngClass]="[ ceFormErrorsBool[name.id] ? 'danger' : 'success']">
+                      <i class="fa fa-building-o" aria-hidden="true"></i></span>
+                  <input type="text"
+                         class="form-control"
+                         [ngClass]="[ ceFormErrorsBool[name.id] ? 'form-control-danger' : '']"
+                         id="name"
+                         #name
+                         (blur)="_blurError(ceFormErrors.name, $event)"
+                         placeholder="Nom du CE"
+                         formControlName="name"  >
+                </div>
+                <div *ngIf="ceFormErrors.name && ceFormErrorsBool.name"
+                     class="small text-danger text-center"
+                     [innerHTML]="ceFormErrors.name">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="company">Société</label>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon"
+                        [ngClass]="[ ceFormErrorsBool[company.id] ? 'danger' : 'success']">
+                  <i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                  <input type="text"
+                         [ngClass]="[ ceFormErrorsBool[company.id] ?
+                          'form-control-danger' : '']"
+                         #company
+                         id="company"
+                         class="form-control"
+                         formControlName="company"
+                         (blur)="_blurError(ceFormErrors.company, $event)"
+                         placeholder="Entrez le nom de la Société"/>
+                </div>
+                <div *ngIf="ceFormErrors.company && ceFormErrorsBool.company"
+                     class="small text-danger text-center"
+                     [innerHTML]="ceFormErrors.company">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group input-group-sm">
+                <label for="streetNumber">Numéro Rue</label>
+                <input type="number"
+                       id="streetNumber"
+                       formControlName="streetNumber"
+                       [ngClass]="[ ceFormErrorsBool[streetNumber.id] ?
+                          'form-control-danger' : '']"
+                       (blur)="_blurError(ceFormErrors.streetNumber, $event)"
+                       class="form-control"
+                       #streetNumber
+                       [min]="cef.streetMin">
+                <div *ngIf="ceFormErrors.streetNumber && ceFormErrorsBool.streetNumber"
+                     class="small text-danger text-center"
+                     [innerHTML]="ceFormErrors.streetNumber">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group input-group-sm">
+                <label>Adresse</label>
+                <input type="text" class="form-control" id="address1"
+                       formControlName="address1"
+                       [ngClass]="[ ceFormErrorsBool[address1.id] ?
+                          'form-control-danger' : '']"
+                       #address1
+                       (blur)="_blurError(ceFormErrors.address1, $event)"
+                       placeholder="Entrez l'adresse du CE">
+                <div *ngIf="ceFormErrors.address1 && ceFormErrorsBool.address1"
+                     class="small text-danger text-center"
+                     [innerHTML]="ceFormErrors.address1">
+                </div>
+              </div>
+
+
+            </div>
+            <div class="col-md-4">
+              <div class="form-group input-group-sm">
+                <label>Complément d'adresse</label>
+                <input type="text"
+                       class="form-control" id="address2"
+                       formControlName="address2"
+                       placeholder="Etage, batiment...">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group input-group-sm">
+                <label>Code Postal</label>
+                <input type="text" class="form-control input-group-sm"
+                       id="postalCode"
+                       [ngClass]="[ ceFormErrorsBool[postalCode.id] ?
+                          'form-control-danger' : '']"
+                       #postalCode
+                       (blur)="_blurError(ceFormErrors.postalCode, $event)"
+                       formControlName="postalCode"
+                       placeholder="Entrez un Code Postal">
+                <div *ngIf="ceFormErrors.postalCode && ceFormErrorsBool.postalCode"
+                     class="small text-danger text-center"
+                     [innerHTML]="ceFormErrors.postalCode">
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-5">
+              <div class="form-group input-group-sm">
+                <label>Ville</label>
+                <input type="text" class="form-control"
+                       [ngClass]="[ ceFormErrorsBool[city.id] ?
+                          'form-control-danger' : '']"
+                       formControlName="city"
+                       id="city"
+                       #city
+                       (blur)="_blurError(ceFormErrors.city, $event)"
+                       placeholder="Entrez la ville du CE"/>
+                <div *ngIf="ceFormErrors.city && ceFormErrorsBool.city "
+                     class="small text-danger text-center"
+                     [innerHTML]="ceFormErrors.city">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5">
+              <div class="form-group">
+                <label>Téléphone</label>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon"
+                        [ngClass]="[ ceFormErrorsBool[telephone.id] ? 'danger' : 'success']">
+                    <i class="fa fa-phone" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control"
+                         id="telephone"
+                         [ngClass]="[ ceFormErrorsBool[telephone.id] ?
+                          'form-control-danger' : '']"
+                         #telephone
+                         (blur)="_blurError(ceFormErrors.telephone, $event)"
+                         formControlName="telephone"
+                         placeholder="04 93 56 99 54"/>
+                </div>
+                <div *ngIf="ceFormErrors.telephone && ceFormErrors.telephone"
+                     class="small text-danger text-center"
+                     [innerHTML]="ceFormErrors.telephone">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="form-group ">
+                <label>Fax</label>
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon"
+                        [ngClass]="[ ceFormErrorsBool[fax.id] ? 'danger' : 'success']"
+                  ><i class="fa fa-fax" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="fax"
+                         formControlName="fax"
+                         [ngClass]="[ ceFormErrorsBool[fax.id] ?
+                          'form-control-danger' : '']"
+                         (blur)="_blurError(ceFormErrors.fax, $event)"
+                         #fax
+                         placeholder="04 93 56 99 54"/>
+                </div>
+                <div *ngIf="ceFormErrors.fax && ceFormErrors.fax"
+                     class="small text-danger text-center"
+                     [innerHTML]="ceFormErrors.fax">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group input-group-sm">
+                <div class="container-btn">
+                  <button class="btn btn-primary btn-tn"
+                          type="submit"
+                          [attr.disabled]="ceForm.invalid || submitting ? true : null"
+                          [innerText]="submitBtnText"></button>
+                  <button class="btn btn-warning btn-tn"
+                          type="button"
+                          (click)="_resetForm()"
+                          [innerText]="resetBtnText"></button>
+                  <button class="btn btn-secondary btn-tn pull-right"
+                          type="button"
+                          [hidden]="!isEdit"
+                          (click)="_ceSetupButtonClick()"
+                          [innerText]="ceSetupBtnText"></button>
+                  <button class="btn btn-secondary btn-tn pull-right"
+                          type="button"
+                          [hidden]="!isEdit"
+                          (click)="_catalogButtonClick()"
+                          [innerText]="catalogBtnText"></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </nb-card-body>
+        <nb-card-footer>
+          <small class="pull-right"><i>Les champs marqués d'une * sont obligatoires</i></small>
+        </nb-card-footer>
+      </nb-card>
+    </form>
+    <nb-card *ngIf="noCe">
+      <nb-card-header>Pas de CE</nb-card-header>
+      <nb-card-body> Cette ID CE n'éxiste pas. Vérifiez vos informations.</nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+
+
+
+
+

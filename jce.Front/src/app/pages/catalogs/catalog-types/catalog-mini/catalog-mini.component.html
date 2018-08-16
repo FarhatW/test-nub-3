@@ -1,0 +1,47 @@
+<!--{{ catalog | json}}-->
+<div *ngIf="catalog.catalogType == 1">
+  <div class="row">
+    <div class="col-md-8">
+    <nb-card>
+      <nb-card-header>Mini Catalogue</nb-card-header>
+      <nb-card-body>
+        <ng2-smart-table [settings]="settings"
+                         [source]="source"
+                         (deleteConfirm)="onDeleteConfirm($event)"
+                         (editConfirm)="onEditConfirm($event)" >
+        </ng2-smart-table>
+      </nb-card-body>
+      <nb-card-footer>
+        {{ totalProdutcs }} produit(s) trouvé(s) - Nombre de pages : {{ pageCount}} - Nombre de produits par page :
+        <select (change)="setPaging($event)">
+          <option [value]="10" >10</option>
+          <option [value]="15" >15</option>
+          <option [value]="20" >20</option>
+        </select>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+    <div class="col-md-4">
+      <ngx-catalog-filesearch [catalog]="catalog"
+                              [isMiniCatalog]="isMiniCatalog"
+                              (good)="receiveCatalogGood($event)"></ngx-catalog-filesearch>
+      <nb-card>
+        <nb-card-header>Import Excel</nb-card-header>
+        <nb-card-body>
+          <p>Pour importer des produits dans ce Catalogue, vous pouvez uploader un fichier en cliquant sur le bouton ci dessous.</p>
+          <p>Attention ! Veillez à utiliser ce modèle de <a href="">fichier Excel</a>, auquel cas rien ne sera ajouté.</p>
+          <p>Pour rappel, la Référence Pintel, la date minimum et la date maximum sont obligatoires.</p>
+
+          <input type="file" #fileInput
+                 (change)="onFileChange($event)"
+                 multiple="false"
+                 value="Charger un fichier excel">
+        </nb-card-body>
+        <nb-card-footer>Date d'expiration : {{ catalog.expirationDate}} - Type de catalogue : {{ catalog.catalogType}} - Pour modifier les informations</nb-card-footer>
+      </nb-card>
+    </div>
+  </div>
+
+</div>
+
+

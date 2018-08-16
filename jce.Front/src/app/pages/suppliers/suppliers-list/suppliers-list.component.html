@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-lg navbar-dark teal mb-4">
+  <div class="col-md-2">
+    <h4>Liste des Fournisseurs</h4>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="col-6">
+      <ul class="navbar-nav mr-auto col-12">
+        <li class="nav-item col-4">
+          <a class="nav-link" style="vertical-align: middle" routerLink="new" [routerLinkActive]="['active']">Ajouter
+            une Fournisseur</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nav-item col-6">
+      <div class="row">
+        <div class="col-4">
+          <label>Fournisseurs par page </label>
+          <select class='select-option' required [(ngModel)]='optionSelected'
+                  (ngModelChange)='onOptionsSelected($event)'>
+            <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
+          </select>
+        </div>
+        <div class="col-8">
+          <label>Rechercher un Fournisseur</label>
+          <div class="input-group input-group-sm">
+          <span *ngIf="searchInput.value.length >= 3"
+                (click)="clearSearch(); searchInput.value = ''"
+                class="input-group-addon success onhover">
+            <i class="ion-close-circled" aria-hidden="true"></i></span>
+            <span *ngIf="searchInput.value.length < 3"
+                  class="input-group-addon input-group-sm success smallfont small">
+                <i class="ion-search" aria-hidden="true"></i></span>
+            <input type="text" class="form-control input-group-sm smallfont small"
+                   placeholder="Cherchez un fournisseur (3 charactères min.)"
+                   (keyup)="_setSearch($event.target.value); searchTerm$.next($event.target.value)"
+                   #searchInput/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <div [@routerTransition]="isActiveChild" [ngClass]="[isActiveChild ? 'col-md-7' : 'col-md-12']" >
+    <nb-card>
+      <nb-card-body>
+        <ngx-datatable
+          #productTable
+          [rows]="rows"
+          [columns]="columns"
+          class="material datatable-row-odd"
+          [columnMode]="'force'"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [rowHeight]="'auto'"
+          [externalPaging]="true"
+          [externalSorting]="true"
+          [count]="page.totalElements"
+          [offset]="page.pageNumber"
+          (sort)="onSort($event)"
+          (page)='setPage($event, searchInput.value)'
+          [selected]="selectedRow"
+          (select)="onSelect($event)"
+          [selectionType]="'single'"
+          [selectCheck]="singleSelectCheck"
+          [limit]="page.size"
+          style="border-radius: 5px; box-shadow: 0px">
+          <ngx-datatable-column
+            [width]="70"
+            [sortable]="false"
+            [canAutoResize]="false"
+            [draggable]="false"
+            [resizeable]="false"
+            name="Actif"
+            prop="isEnabled">
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              <nb-checkbox [value]="value" (change)="onDeselect($event, row)"></nb-checkbox>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="50"
+            [sortable]="true"
+            [canAutoResize]="false"
+            [draggable]="false"
+            [resizeable]="true"
+            name="Id"></ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="200"
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="false"
+            [resizeable]="false"
+            name="Nom"
+            prop="name">
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="100"
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="false"
+            [resizeable]="200"
+            name="Ref Fournisseur"
+            prop="supplierRef">
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="80"
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="false"
+            [resizeable]="200"
+            name="Produits Associés"
+            prop="productCount">
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-md-5" [@routerTransition]="getOutlet(o)" >
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
+</div>
+
+
+
+
+

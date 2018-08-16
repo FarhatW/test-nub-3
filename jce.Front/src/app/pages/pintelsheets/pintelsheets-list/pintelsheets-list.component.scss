@@ -1,0 +1,32 @@
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+textarea {
+  resize: none;
+}
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+//@import url(https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css);
+
+.onhover {
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  color: darkorange !important;
+}
+
+.onhover:hover {
+  color: red !important;
+  cursor: pointer;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+

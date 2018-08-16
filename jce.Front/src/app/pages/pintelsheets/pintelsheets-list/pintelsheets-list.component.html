@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg navbar-dark teal mb-4">
+  <div class="col-md-2">
+    <h4>Liste des Fiches de Collectivités</h4>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" style="vertical-align: middle" routerLink="new" [routerLinkActive]="['active']">Ajouter
+          une Fiche</a>
+      </li>
+      <div class="row">
+        <div class="col-md-8 offset-1">
+          <label>Fiches par page </label>
+          <select class='select-option' required [(ngModel)]='optionSelected'
+                  (ngModelChange)='onOptionsSelected($event)'>
+            <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-5">
+        </div>
+      </div>
+    </ul>
+  </div>
+</nav>
+
+<div class="row">
+  <div [ngClass]="[isActiveChild ? 'col-md-7' : 'col-md-12']" >
+    <nb-card>
+      <nb-card-body>
+        <ngx-datatable
+          #productTable
+          [rows]="rows"
+          [columns]="columns"
+          class="material datatable-row-odd"
+          [columnMode]="'force'"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [rowHeight]="'auto'"
+          [externalPaging]="true"
+          [externalSorting]="true"
+          [count]="page.totalElements"
+          [offset]="page.pageNumber"
+          (sort)="onSort($event)"
+          (page)='setPage($event)'
+          [selected]="selectedRow"
+          (select)="onSelect($event)"
+          [selectionType]="'single'"
+          [selectCheck]="singleSelectCheck"
+          [limit]="page.size"
+          style="border-radius: 5px; ">
+          <ngx-datatable-column
+            [width]="50"
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="false"
+            [resizeable]="false"
+            name="Id"
+          >
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="200"
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="false"
+            [resizeable]="false"
+            name="Numéro Fiche"
+            prop="sheetId">
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="100"
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="false"
+            [resizeable]="200"
+            name="Groupe D'Age"
+            prop="ageGroup.name">
+          </ngx-datatable-column>
+          <ngx-datatable-column
+            [width]="80"
+            [sortable]="true"
+            [canAutoResize]="true"
+            [draggable]="false"
+            [resizeable]="200"
+            name="Produits Associés"
+            prop="productCount">
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-md-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+
+
+

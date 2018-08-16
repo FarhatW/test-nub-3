@@ -1,0 +1,136 @@
+<form *ngIf="catalogForm" [formGroup]="catalogForm" (ngSubmit)="onSubmit()">
+  <nb-card>
+    <nb-card-header>
+      <div class="row">
+        <div class="col-md-9">
+          <i class="fa fa-cogs" aria-hidden="true">
+          </i>&nbsp; &nbsp; &nbsp; Configuration du Catalogue
+        </div>
+        <div class="col-md-3">
+          <nb-checkbox
+            id="isActif" name="isActif"
+            formControlName="isActif">
+            Actif
+          </nb-checkbox>
+        </div>
+      </div>
+    </nb-card-header>
+    <nb-card-body>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Sélection des produits</label>
+              <select class="form-control small"
+                      name="catalogType"
+                      formControlName="catalogType">
+                <option *ngFor="let type of catalogTypes" [value]="type.id"
+                        [selected]="formCatalog.catalogType === type.id"> {{ type.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="form-group input-group-sm">
+              <label>Date d'expiration</label>
+              <input type="date" class="form-control"
+                     [value]="formCatalog.expirationDate | date: 'yyyy-MM-dd' "
+                     #expirationDate
+                     id="expirationDate"
+                     formControlName="expirationDate">
+              <div *ngIf="catalogFormErrors.expirationDate && catalogFormErrorsBool"
+                   class="small text-danger"
+                   [innerHTML]="catalogFormErrors.expirationDate"></div>
+            </div>
+
+          </div>
+          <div class="col-md-2">
+            <label>Afficher les prix</label>
+            <div formControlName="displayPrice"
+                 name="displayPrice"
+                 ngbRadioGroup
+                 class="btn-group btn-toggle-group btn-outline-toggle-group btn-toggle-radio-group">
+              <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+                <input ngbButton type="radio" [value]="false"> Non
+              </label>
+              <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+                <input ngbButton type="radio" [value]="true"> Oui
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Type de choix</label>
+            <div formControlName="catalogChoiceTypeId"
+                 name="catalogChoiceTypeId"
+                 ngbRadioGroup
+                 class="btn-group btn-toggle-group
+                 btn-outline-toggle-group btn-toggle-radio-group">
+              <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+                <input ngbButton type="radio" [value]="1"> Choix Unique
+              </label>
+              <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+                <input ngbButton type="radio" [value]="2"> Choix Multiple
+              </label>
+              <label ngbButtonLabel class="btn btn-outline-primary btn-tn">
+                <input ngbButton type="radio" [value]="3"> Choix Cumulés
+              </label>
+            </div>
+          </div>
+          <div *ngIf="formCatalog.catalogChoiceTypeId === 3" class="col-md-6">
+            <div class="row ">
+              <div class="form-group input-group-sm col-md-6">
+                <label>Produits max</label>
+                <input class="form-control"
+                       type="number"
+                       formControlName="productChoiceQuantity"
+                       name="productChoiceQuantity"
+                       minMaxProducts>
+              </div>
+              <div class="form-group input-group-sm col-md-6">
+                <label>Livres</label>
+                <input class="form-control" type="number" min="0" max="5"
+                       name="booksQuantity"
+                       formControlName="booksQuantity">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group input-group-sm col-md-6">
+                <label>Jouets</label>
+                <input class="form-control" type="number" min="0" max="5"
+                       name="toysQuantity"
+                       formControlName="toysQuantity">
+              </div>
+              <div class="form-group input-group-sm col-md-6">
+                <label>Abonnement</label>
+                <input class="form-control" type="number" min="0" max="5"
+                       name="subscriptionQuantity"
+                       formControlName="subscriptionQuantity">
+              </div>
+            </div>
+          </div>
+          <div *ngIf="formCatalog.catalogChoiceTypeId === 2" class="col-md-2">
+            <div class="form-group input-group-sm">
+              <label>Nb de choix possibles</label>
+              <input class="form-control" width="20px"
+                     name="productChoiceQuantity"
+                     formControlName="productChoiceQuantity"
+                     type="number">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-tn"
+              type="submit"
+              [attr.disabled]="catalogForm.invalid || submitting ? true : null"
+              [innerText]="submitBtnText"></button>
+
+    </nb-card-body>
+    <nb-card-footer>
+    </nb-card-footer>
+  </nb-card>
+</form>
+
+<nb-card *ngIf="noCE">PAS DE CE</nb-card>

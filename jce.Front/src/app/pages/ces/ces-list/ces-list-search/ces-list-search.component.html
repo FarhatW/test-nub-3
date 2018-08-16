@@ -1,0 +1,14 @@
+    <div class="input-group input-group-sm">
+          <span *ngIf="searchInput.value.length > 0"
+                (click)="clearSearch(searchInput.value); searchInput.value = ''"
+                class="input-group-addon success onhover">
+            <i class="ion-close-circled" aria-hidden="true"></i></span>
+      <span *ngIf="searchInput.value.length === 0"
+            class="input-group-addon success smallfont small">
+                <i class="ion-search" aria-hidden="true"></i></span>
+      <input type="text" class="form-control smallfont small"
+             [(ngModel)]="searchInputTs"
+             placeholder="Nom, Entreprise ou Ville (3 car. min)"
+             (keyup)="_setSearch($event.target.value); searchTerm$.next($event.target.value)"
+             #searchInput/>
+    </div>

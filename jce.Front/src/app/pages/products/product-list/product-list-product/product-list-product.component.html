@@ -1,0 +1,323 @@
+<nb-card>
+  <nb-card-header>
+    <span class="grey pull-right">{{ cardHeaderId }}
+</span> <span class="center"> {{ cardHeaderTitle }}</span>
+  </nb-card-header>
+  <nb-card-body>
+    <form *ngIf="goodForm" [formGroup]="goodForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+        <div class="col-md-4">
+          <img class="image product"
+               [src]="goodImage"/>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-5">
+              <div class="form-group">
+                <label>Ref. Pintel : </label>
+                <div class="input-group input-group-sm">
+                  <input type="text" placeholder="Référence Pintel"
+                         class="form-control"
+                         [ngClass]="[ goodFormErrorsBool[refPintel.id] ?
+                          'form-control-danger' : '']"
+                         (blur)="_blurError(goodFormErrors.refPintel, $event)"
+                         id="refPintel"
+                         formControlName="refPintel"
+                         #refPintel
+                  />
+                </div>
+                <div *ngIf="goodFormErrors.refPintel && goodFormErrorsBool.refPintel"
+                     class="small text-danger text-center"
+                     [innerHTML]="goodFormErrors.refPintel">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="form-group">
+                <label>Nom du Produit : </label>
+                <div class="input-group input-group-sm">
+                  <input type="text" placeholder="Nom du produit"
+                         class="form-control"
+                         [ngClass]="[ goodFormErrorsBool[title.id] ?
+                          'form-control-danger' : '']"
+                         (blur)="_blurError(goodFormErrors.title, $event)"
+                         id="title"
+                         formControlName="title"
+                         #title
+                  />
+                </div>
+                <div *ngIf="goodFormErrors.title && goodFormErrorsBool.title"
+                     class="small text-danger text-center"
+                     [innerHTML]="goodFormErrors.title">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="input-group">
+                </div>
+
+                <label>Fournisseur : </label>
+                <div class="input-group input-group-sm">
+                  <ng-autocomplete (selected)="Selected($event)"
+                                   [group]="group"
+                                   #autocompleter>
+                  </ng-autocomplete>
+                </div>
+                <div *ngIf="goodFormErrors.supplierId && goodFormErrorsBool.supplierId"
+                     class="small text-danger text-center"
+                     [innerHTML]="goodFormErrors.supplierId">
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Prix : </label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon success small">
+                  <i class="ion-social-euro" aria-hidden="true"
+                     [ngClass]="[ goodFormErrorsBool[price.id] ?
+                          'danger' : '']"></i></span>
+                <input type="text" placeholder="Prix"
+                       [ngClass]="[ goodFormErrorsBool[price.id] ?
+                          'form-control-danger' : '']"
+                       class="form-control small smallfont"
+                       formControlName="price"
+                       id="price"
+                       #price
+                       (blur)="_blurError(goodFormErrors.price, $event)"
+                />
+              </div>
+              <div *ngIf="goodFormErrors.price && goodFormErrorsBool.price"
+                   class="small text-danger text-center"
+                   [innerHTML]="goodFormErrors.price">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Détails : </label>
+            <div class="input-group input-group-sm">
+              <textarea rows="6" placeholder="Détails du produit"
+                        class="form-control smallfont"
+                        [ngClass]="[ goodFormErrorsBool[details.id] ?
+                          'form-control-danger' : '']"
+                        formControlName="details"
+                        #details
+                        (blur)="_blurError(goodFormErrors.details, $event)"
+              ></textarea>
+            </div>
+            <div *ngIf="goodFormErrors.details && goodFormErrorsBool.details"
+                 class="small text-danger text-center"
+                 [innerHTML]="goodFormErrors.details">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="row">
+            <div class="form-group col-md-7">
+              <label>Index : </label>
+              <div class="input-group input-group-sm">
+                <select class="form-control small smallfont"
+                        formControlName="indexId"
+                        [ngClass]="[ goodFormErrorsBool[indexId.id] ?
+                          'form-control-danger' : '']"
+                        #indexId
+                        id="indexId"
+                        [compareWith]="_compare"
+                        (blur)="_blurError(goodFormErrors.indexId, $event)">
+                  <option [ngValue]="null">Sélectionnez un index</option>
+                  <option *ngFor="let letter of letters"
+                          value="{{ letter.name }}">
+                    {{ letter.name }} - {{ letter.displayRange }}
+                  </option>
+                </select>
+              </div>
+              <div *ngIf="goodFormErrors.indexId && goodFormErrorsBool.indexId"
+                   class="small text-danger text-center"
+                   [innerHTML]="goodFormErrors.indexId">
+              </div>
+            </div>
+            <div class="form-group col-md-5">
+              <label>Type Produit : </label>
+              <div class="input-group input-group-sm">
+                <select class="form-control small"
+                        [ngClass]="[ goodFormErrorsBool[productTypeId.id] ?
+                          'form-control-danger' : '']"
+                        formControlName="productTypeId"
+                        #productTypeId
+                        id="productTypeId"
+                        [compareWith]="_compare"
+                        (blur)="_blurError(goodFormErrors.productTypeId, $event)"
+                >
+                  <option [ngValue]="null">Sélectionnez un type de jouet</option>
+                  <option *ngFor="let type of toyTypes"
+                          value="{{ type.id}}">{{ type.name }}
+                  </option>
+                </select>
+              </div>
+              <div *ngIf="goodFormErrors.productTypeId && goodFormErrorsBool.productTypeId"
+                   class="small text-danger text-center"
+                   [innerHTML]="goodFormErrors.productTypeId">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <div class="form-group">
+                <label>Univers : </label>
+                <div class="input-group input-group-sm">
+                  <select class="form-control small"
+                          [ngClass]="[ goodFormErrorsBool[goodDepartmentId.id] ?
+                          'form-control-danger' : '']"
+                          formControlName="goodDepartmentId"
+                          #goodDepartmentId
+                          id="goodDepartmentId"
+                          [compareWith]="_compare"
+                          (blur)="_blurError(goodFormErrors.goodDepartmentId, $event)"
+                  >
+                    <option [ngValue]="null">Sélectionnez un univers</option>
+                    <option *ngFor="let toyDepartment of toyDepartments"
+                            value="{{ toyDepartment.id}}">
+                      {{ toyDepartment.name }}
+                    </option>
+                  </select>
+                </div>
+                <div *ngIf="goodFormErrors.goodDepartmentId && goodFormErrorsBool.goodDepartmentId"
+                     class="small text-danger text-center"
+                     [innerHTML]="goodFormErrors.goodDepartmentId">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label>Saison : </label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon success small"
+                      [ngClass]="[ goodFormErrorsBool[season.id] ?
+                          'danger' : '']">
+                  <i class="ion-android-calendar" aria-hidden="true"></i></span>
+                <input type="text" placeholder="Saison"
+                       [ngClass]="[ goodFormErrorsBool[season.id] ?
+                          'form-control-danger' : '']"
+                       formControlName="season"
+                       id="season"
+                       class="form-control small smallfont"
+                       #season
+                       (blur)="_blurError(goodFormErrors.season, $event)"
+                />
+              </div>
+              <div *ngIf="goodFormErrors.season && goodFormErrorsBool.season"
+                   class="small text-danger text-center"
+                   [innerHTML]="goodFormErrors.season">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Provenance : </label>
+            <div class="input-group input-group-sm">
+              <select class="form-control small"
+                      [ngClass]="[ goodFormErrorsBool[originId.id] ?
+                          'form-control-danger' : '']"
+                      formControlName="originId"
+                      id="originId"
+                      (blur)="_blurError(goodFormErrors.originId, $event)"
+                      #originId
+                      [compareWith]="_compare">
+                <option [ngValue]="null">Sélectionnez une provenance</option>
+                <option *ngFor="let origin of origins"
+                        [ngValue]="origin.id">{{ origin.name }}
+                </option>
+              </select>
+            </div>
+            <div *ngIf="goodFormErrors.originId && goodFormErrorsBool.originId"
+                 class="small text-danger text-center"
+                 [innerHTML]="goodFormErrors.originId">
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-3">
+          <label>Au choix :</label>
+          <div class="form-group">
+            <nb-checkbox [formControl]="goodForm.controls['isDiscountable']"
+                         name="isDiscountable"
+                         id="isDiscountable"
+            >Remisable
+            </nb-checkbox>
+            <nb-checkbox [formControl]="goodForm.controls['isEnabled']"
+                         name="isEnabled"
+                         id="isEnabled"
+            >Actif
+            </nb-checkbox>
+          </div>
+        </div>
+        <div *ngIf="formGood.isBatch"
+             class="col-md-6">
+          <label>Ajouter un produit</label>
+          <ngx-product-list-search [suppliers]="suppliers"
+                                   (good2send)="addProd2Batch(formGood ,$event)">
+          </ngx-product-list-search>
+        </div>
+        <div class="col-md-4" *ngIf="!formGood.isBatch">
+          <label>Autres choix :</label>
+          <div class="form-group">
+            <nb-checkbox [formControl]="goodForm.controls['isDisplayedOnJCE']"
+                         name="isDisplayedOnJCE"
+            >Afficher sur JCE
+            </nb-checkbox>
+            <nb-checkbox [formControl]="goodForm.controls['isBasicProduct']"
+                         name="isBasicProduct"
+            >Produit de base
+            </nb-checkbox>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12" *ngIf="formGood.isBatch">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Produits du Lot</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-condensed table-hover table-bordered" style="padding: 0.5rem !important;">
+              <tr>
+                <th></th>
+                <th>Ref Pintel</th>
+                <th>Nom Produit</th>
+                <th>Fournisseur</th>
+              </tr>
+              <tr *ngFor="let prod of formGood.products">
+                <td><i class="ion-close-round close"
+                       (click)="deleteProd(formGood, prod)"></i></td>
+                <td>{{ prod.refPintel}}</td>
+                <td>{{ prod.title}}</td>
+                <td> {{ goodSupplier(prod)}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group input-group-sm">
+            <div class="container-btn">
+              <button class="btn btn-primary btn-tn"
+                      type="submit"
+                      [attr.disabled]="goodForm.invalid || submitting ? true : null"
+                      [innerText]="submitBtnText"></button>
+              <span class="btn btn-danger btn-tn pull right" (click)="onClose()">Fermer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

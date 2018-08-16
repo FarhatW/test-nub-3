@@ -1,0 +1,15 @@
+<!--<nb-card>-->
+  <!--<nb-card-body>-->
+    <label>Filtrer par utilisateur </label>
+    <select class='select-option'
+            [(ngModel)]="selectedUser"
+            (ngModelChange)='onUserSelected($event)'>
+      <option value="null">Choisissez un Administrateur</option>
+      <option class='option'
+              *ngFor='let user of users'
+              [value]="user.id">
+        {{ user.id}} {{ userService.setNameFirstName(user) }}</option>
+    </select>
+  <!--</nb-card-body>-->
+<!--</nb-card>-->
+

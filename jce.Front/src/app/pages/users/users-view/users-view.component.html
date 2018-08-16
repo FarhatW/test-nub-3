@@ -1,0 +1,55 @@
+<div class="row">
+
+    <div class="col-4">
+      <ngx-users-identity-view [userIdentity]="userIdentity"></ngx-users-identity-view>
+      <ngx-users-jce-view [userProfile]="userProfile"></ngx-users-jce-view>
+    </div>
+    <div class="col-8">
+
+      <div *ngIf="ce !== undefined">
+
+        <nb-card>
+          <nb-card-header >
+           <div>
+            <p class="pull-left">Liste des enfants</p>
+            <a class="pull-right btn btn-primary" routerLink="/users/{{userProfile.id}}/child-form/new" [routerLinkActive]="['active']"> <i class="fas fa-user-plus"></i> Ajouter </a>
+           </div>
+
+
+          </nb-card-header>
+
+          <nb-card-body >
+         <ngx-shared-children-list [childrenInput]="userProfile.children">
+
+         </ngx-shared-children-list>
+            <!--<ng2-smart-table [settings]="settingsChild"-->
+                             <!--[source]="sourceChild"-->
+                             <!--(createConfirm)="addChildConfirm()"-->
+                             <!--(editConfirm)="editChildConfirm()"-->
+                             <!--(deleteConfirm)="deletChildConfirm()"-->
+                             <!--&gt;-->
+            <!--</ng2-smart-table>-->
+          </nb-card-body>
+        </nb-card>
+
+        <nb-card-body >
+          <ngx-ce-view-detail [ce]="ce">
+          </ngx-ce-view-detail>
+        </nb-card-body>
+      </div>
+
+        <nb-card *ngIf="ce === undefined">
+          <nb-card-header >Liste des CE</nb-card-header>
+          <nb-card-body >
+            <ng2-smart-table [settings]="settingsCe"
+                             [source]="sourceCe">
+            </ng2-smart-table>
+          </nb-card-body>
+        </nb-card>
+
+
+
+    </div>
+
+
+</div>

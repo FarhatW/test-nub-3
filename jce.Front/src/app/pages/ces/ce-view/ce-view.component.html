@@ -1,0 +1,23 @@
+
+<div class="row">
+  <div class="col-md-7">
+    <ngx-ce-view-detail [ce]="ce">
+    </ngx-ce-view-detail>
+    <ngx-ce-view-cesetup [ceSetup]="ce?.ceSetup"
+                         [ceId]="ce?.id">
+    </ngx-ce-view-cesetup>
+    <ngx-ce-view-catalog [catalog]="ce?.catalog" [ceId]="ce?.id">
+    </ngx-ce-view-catalog>
+  </div>
+  <div class="col-md-5">
+    <ngx-ce-view-map [address]="ce?.address">
+    </ngx-ce-view-map>
+  </div>
+</div>
+
+
+
+
+
+
+

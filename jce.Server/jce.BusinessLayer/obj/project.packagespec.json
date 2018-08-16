@@ -1,0 +1,62 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.BusinessLayer\\jce.BusinessLayer.csproj",
+    "projectName": "jce.BusinessLayer",
+    "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.BusinessLayer\\jce.BusinessLayer.csproj",
+    "outputPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.BusinessLayer\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {
+          "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.Common\\jce.Common.csproj": {
+            "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.Common\\jce.Common.csproj"
+          },
+          "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.DataAccess\\jce.DataAccess.csproj": {
+            "projectPath": "D:\\projets\\JCTeam\\jce.project\\jce.Server\\jce.DataAccess\\jce.DataAccess.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "MailKit": {
+          "target": "Package",
+          "version": "[2.0.1, )"
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.0.0, )",
+          "autoReferenced": true
+        },
+        "MimeKit": {
+          "target": "Package",
+          "version": "[2.0.1, )"
+        },
+        "Newtonsoft.Json": {
+          "target": "Package",
+          "version": "[11.0.1, )"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

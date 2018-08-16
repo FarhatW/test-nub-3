@@ -1,0 +1,11 @@
+<div class="page-header logged-out">
+    <h1>
+        Logout
+        <small>You are now logged out</small>
+    </h1>
+    <div *ngIf="model?.postLogoutRedirectUri" >
+        Click <a class="postLogoutRedirectUri" href="model?.postLogoutRedirectUri">here</a> to return to the
+        <span>{{model.clientName}}</span> application.
+    </div>
+    <iframe *ngIf="model?.SignOutIframeUrl" width="0" height="0" class="signout" src="model?.signOutIframeUrl"></iframe>
+</div>

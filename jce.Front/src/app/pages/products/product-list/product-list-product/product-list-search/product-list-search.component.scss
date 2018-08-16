@@ -1,0 +1,49 @@
+
+.productList {
+  width: 416px;
+  margin-left: 52px;
+  height: 35px;
+  line-height: 35px;
+  border-bottom: solid 0.2px #3A3A3A;
+  -o-transition:0.5s;
+  -ms-transition:0.5s;
+  -moz-transition:0.5s;
+  -webkit-transition:0.5s;
+  z-index: 20;
+}
+
+.productList:hover {
+  font-size: 1.05em;
+}
+
+.productArrInputs {
+  border-radius: 3px;
+  border: 1px solid darkgrey;
+}
+
+.productArrInputsDanger {
+  //background-color: orangered;
+  border: 2px solid red;
+}
+
+.productArrI {
+  -o-transition:0.5s;
+  -ms-transition:0.5s;
+  -moz-transition:0.5s;
+  -webkit-transition:0.5s;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+onhover {
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  color: darkorange !important;
+}
+
+.onhover:hover {
+  color: red !important;
+  cursor: pointer;
+}

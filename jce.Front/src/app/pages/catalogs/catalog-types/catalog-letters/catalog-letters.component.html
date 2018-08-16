@@ -1,0 +1,73 @@
+<!--{{ catalog | json }}-->
+<div *ngIf="catalog?.catalogType == 2">
+  <div class="row">
+    <div class="col-md-7">
+      <nb-card>
+        <nb-card-header>Catalogue de type Lettres</nb-card-header>
+        <nb-card-body>
+          <div class="row" style="padding-top: 20px">
+            <div *ngFor="let date of dateArr; let isFirstRow=first; let i = index;"
+                 [ngClass]="[isFirstRow || i == 5 ? 'offset-md-1 col-md-2 product' : 'col-md-2 product']">
+              <h5>Produits {{ date.letter}}</h5>
+              <div [(ngModel)]="date.checked"
+                   name="{{date.letter}}"
+                   ngbRadioGroup
+                   class="btn-group btn-toggle-group btn-outline-toggle-group btn-toggle-radio-group">
+                <label ngbButtonLabel class="btn btn-outline-primary" style="padding: 0.1rem 0.8rem">
+                  <input ngbButton type="radio"
+                         [value]="false"> Non
+                </label>
+                <label ngbButtonLabel class="btn btn-outline-primary" style="padding: 0.1rem 0.8rem">
+                  <input ngbButton type="radio"
+                         [value]="true"> Oui
+                </label>
+              </div>
+              <div class="form-group">
+                <label>Date Minimum</label>
+                <input [(ngModel)]="date.dateMin"
+                       type="number" min="1998" max="2018"
+                       [ngClass]="{'form-control-danger danger':
+                 (date.checked && (date.dateMin >= date.dateMax)) || (date.checked && (date.dateMin < 1998))}"
+                       [disabled]="!date.checked"
+                       [value]="date.dateMin"
+                       class="form-control">
+                <label>Date Maximum</label>
+                <input [(ngModel)]="date.dateMax" type="number" min="1998" max="2018"
+                       [ngClass]="{'form-control-danger danger':
+                  (date.checked && (date.dateMax <=  date.dateMin )) || (date.checked && ( date.dateMax > 2018))}"
+                       [disabled]="!date.checked"
+                       [value]="date.dateMax"
+                       class="form-control">
+              </div>
+            </div>
+          </div>
+          <button (click)="saveCatalog()"
+                  class="btn btn-sm btn-primary pull-right">
+            Sauvegarder le Catalogue</button>
+        </nb-card-body>
+
+        <nb-card-footer> Nombre de produits actuellement ajoutés : {{ catalog?.catalogGoods.length}}</nb-card-footer>
+      </nb-card>
+    </div>
+
+    <div class="col-md-5">
+      <ngx-catalog-filesearch [catalog]="catalog"
+                              (good)="receiveCatalogGood($event)">
+      </ngx-catalog-filesearch>
+      <ngx-catalog-history [catalog]="catalog"
+                           (deleteEvent)="receiveDelete($event)"
+                           (editEvent)="receiveEdit($event)">
+      </ngx-catalog-history>
+    </div>
+  </div>
+</div>
+<div *ngIf="catalog?.catalogType != 2">
+  <nb-card>
+    <nb-card-header>Mauvais type de catalogue</nb-card-header>
+    <nb-card-body><p>Le catalogue que vous essayez d'afficher est de type {{ catalog?.catalogType}}.</p>
+      <p>Si vous souhaitez changer de type de catalogue cliquez <a href="ces/ce/{{ catalog?.ceId }}/catalog">ici</a></p>
+      <p><span>! Attention !</span> Si vous changez de type de catalogue, tous les produits affectés à ce lui ci seront
+        supprimés.</p>
+    </nb-card-body>
+  </nb-card>
+</div>

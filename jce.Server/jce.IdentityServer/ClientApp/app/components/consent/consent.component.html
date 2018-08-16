@@ -1,0 +1,131 @@
+
+
+
+
+
+<div class="page-consent">
+
+
+  <div class="row page-header">
+    <div class="col-sm-10">
+      <p>{{consent.clientLogoUrl}}</p>
+<!--      <div class="client-logo" *ngIf="consent.clientLogoUrl != ''">-->
+<!--        <img src="{{consent.clientLogoUrl}}">-->
+<!--      </div>-->
+
+      <h3>
+        {{consent.clientName}}
+
+        demande votre autorisation 
+      </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+
+<!--      $1$<div class="alert alert-danger">#1#-->
+<!--      $1$<strong>Error</strong>#1#-->
+<!--      $1$<div asp-validation-summary="All" class="danger"></div>#1#-->
+<!--      $1$</div>#1#-->
+
+
+      <form class="consent-form">
+        <input type="hidden" asp-for="ReturnUrl" />
+        <div>Décocher les autorisations que vous ne voulez pas allouer.</div>
+
+        <div class="panel panel-default consent-buttons" *ngIf="consent.identityScopes.length > 0">
+          <div class="panel-heading">
+            <span class="glyphicon glyphicon-user"></span>
+            Informations personnel
+          </div>
+          <ul class="list-group">
+
+            <li class="list-group-item" *ngFor="let scope of consent.identityScopes">
+              <label>
+                <input class="consent-scopecheck"
+                       type="checkbox"
+                       name="ScopesConsented"
+                       id="scopes_{{scope.name}}"
+                       value="{{scope.name}}"
+                       checked="{{scope.checked}}"
+                       [disabled]="scope.required"/>
+
+                <input type="hidden"
+                       name="ScopesConsented"
+                       value="{{scope.name}}" *ngIf="scope.required"/>
+
+                <strong>{{scope.displayName}}</strong>
+
+                <span class="glyphicon glyphicon-exclamation-sign" *ngIf="scope.emphasize"></span>
+
+              </label>
+              <span *ngIf="scope.required"><em>(required)</em></span>
+
+
+              <div class="consent-description" *ngIf="scope.description != undefined">
+                <label for="scopes_{{scope.name}}">{{scope.description}}</label>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel panel-default" *ngIf="consent.resourceScopes.length > 0">
+          <div class="panel-heading">
+            <span class="glyphicon glyphicon-tasks"></span>
+            Accès aux applications
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let scope of consent.resourceScopes">
+              <label>
+                <input class="consent-scopecheck"
+                       type="checkbox"
+                       name="ScopesConsented"
+                       id="rscopes_{{scope.name}}"
+                       value="{{scope.name}}"
+                       checked="{{scope.checked}}"
+                       [disabled]="scope.required"/>
+
+                <input type="hidden"
+                       name="ScopesConsented"
+                       value="{{scope.name}}" *ngIf="scope.required"/>
+
+                <strong>{{scope.displayName}}</strong>
+
+                <span class="glyphicon glyphicon-exclamation-sign" *ngIf="scope.emphasize"></span>
+
+              </label>
+              <span *ngIf="scope.required"><em>(required)</em></span>
+
+
+              <div class="consent-description" *ngIf="scope.description != undefined">
+                <label for="scopes_{{scope.name}}">{{scope.description}}</label>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="consent-remember" *ngIf="consent.allowRememberConsent">
+          <label>
+            <input class="consent-scopecheck"
+                   type="checkbox"
+                   checked="{{consent.allowRememberConsent}}"
+                   for="RememberConsent" />
+            <strong>se rappeler de ma décision</strong>
+          </label>
+        </div>
+
+
+        <div class="consent-buttons">
+          <button name="responseYes"  (click)="sendConsent('yes')"   class="btn btn-primary" autofocus>Oui, Autoriser</button>
+          <button name="responseNo"  (click)="sendConsent('No')"   class="btn btn-danger">Non, ne pas Autoriser</button>
+
+<!--          <a class="pull-right btn btn-default" target="_blank" href="{{consent.clientUrl}}" *ngIf="consent.clientUrl != ''">-->
+<!--            <span class="glyphicon glyphicon-info-sign"></span>-->
+<!--            <strong>{{consent.clientName}}</strong>-->
+<!--          </a>-->
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

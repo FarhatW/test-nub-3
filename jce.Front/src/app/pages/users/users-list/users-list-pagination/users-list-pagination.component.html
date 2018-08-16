@@ -1,0 +1,17 @@
+<!--<nb-card>-->
+<!--<nb-card-body>-->
+<label>User par page </label>
+<select class='select-option'
+        required [(ngModel)]='optionSelected'
+        (ngModelChange)='onOptionsSelected($event)'>
+  <option class='option'
+          *ngFor='let option of options'
+          [value]="option">{{option}}</option>
+</select>
+<!--<button class="btn btn-primary btn-tn pull-right"-->
+<!--(click)="_newCeButtonClick()"-->
+<!--&gt;Ajouter un CE</button>-->
+
+<!--</nb-card-body>-->
+<!--</nb-card>-->
+

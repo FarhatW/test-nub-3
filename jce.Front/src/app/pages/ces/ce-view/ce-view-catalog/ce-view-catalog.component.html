@@ -1,0 +1,41 @@
+<nb-card>
+  <nb-card-header>Informations sur le catalogue du CE</nb-card-header>
+  <nb-card-body *ngIf="catalog; else elseCard">
+    <div class="row">
+      <div class="col-md-4">
+        <label><b>Type : </b>{{ cataType(catalog?.catalogType) }}</label>
+      </div>
+      <div class="col-md-5">
+        <label><b>Date d'expiration : </b>{{ catalog?.expirationDate.length > 10 ? catalog?.expirationDate.substring(0, 10) :
+          catalog?.expirationDate }}</label>
+      </div>
+      <div class="col-md-3">
+        <label><b>Qté abo. : </b>{{ catalog?.subscriptionQuantity}}</label>
+      </div>
+      <div class="col-md-5">
+        <label><b>Nombre de produits associés : </b> {{ productNumber }}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary btn-tn pull-left"
+                (click)="routerToCatalog(catalog?.catalogType, catalog?.ceId)">
+          Accéder au Catalogue
+        </button>
+        <button class="btn btn-primary btn-tn pull-right"
+                [routerLink]="['/ces/ce-form/catalogue/', catalog?.ceId]">
+          Editer le Catalogue
+        </button>
+      </div>
+    </div>
+  </nb-card-body>
+  <ng-template #elseCard>
+    <nb-card-body >
+      <p>Aucun catalogue n'a été créé pour ce CE.</p>
+      <button class="btn btn-primary btn-tn pull-left"
+              [routerLink]="['/ces/ce-form/catalogue/', ceId]">
+        Création du Catalogue
+      </button>
+    </nb-card-body>
+  </ng-template>
+</nb-card>
